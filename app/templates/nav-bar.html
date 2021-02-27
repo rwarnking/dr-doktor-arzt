@@ -1,0 +1,72 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="height: 5vh">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <a class="navbar-brand" href="/">
+          <img src="{{ static_url_for('static', filename='img/logo.svg') }}" alt="TODO" width="30" height="24">
+        </a>
+
+        <li class="nav-item">
+          <!-- TODO change apparence depending on active-->
+          <a class="nav-link active" aria-current="page" href="/">Startseite</a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Leistungen
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="chirotherapy">Chirotherapie</a></li>
+            <li><a class="dropdown-item" href="checkups">Vorsorgeuntersuchungen</a></li>
+            <li><a class="dropdown-item" href="diagnostic">Diagnostik</a></li>
+            <li><a class="dropdown-item" href="misc">Sonstige Behandlungen</a></li>
+            <li><a class="dropdown-item" href="services">Service</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Unsere Praxis
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="team">Unser Team</a></li>
+            <li><a class="dropdown-item" href="location">Praxis Rundgang</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Kontakt
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="Arrival">Anfahrt</a></li>
+            <li><a class="dropdown-item" href="Appointment">Termine</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="jobs">Stellenangebote</a>
+        </li>
+
+      </ul>
+
+      <div id="lang-container" class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navLangDrop" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <span class="flag-icon flag-icon-de"> </span> Language
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="navLangDrop">
+            <li><a class="dropdown-item" href="de"><span class="flag-icon flag-icon-de"> </span>  Deutsch</a></li>
+            <li><a class="dropdown-item" href="gb"><span class="flag-icon flag-icon-gb"> </span>  English</a></li>
+            <li><a class="dropdown-item" href="fr"><span class="flag-icon flag-icon-fr"> </span>  French</a></li>
+            <li><a class="dropdown-item" href="it"><span class="flag-icon flag-icon-it"> </span>  Italian</a></li>
+            <li><a class="dropdown-item" href="ru"><span class="flag-icon flag-icon-ru"> </span>  Russian</a></li>
+        </ul>
+      </div>
+
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
