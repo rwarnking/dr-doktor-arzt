@@ -8,51 +8,51 @@
 
         <li class="nav-item">
           <!-- TODO change apparence depending on active-->
-          <a class="nav-link active" aria-current="page" href="/">Startseite</a>
+          <a class="nav-link active" aria-current="page" href="/">{{ gettext("Mainpage") }}</a>
         </li>
 
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Leistungen
+            {{ gettext("Services") }}
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="chirotherapy">Chirotherapie</a></li>
-            <li><a class="dropdown-item" href="checkups">Vorsorgeuntersuchungen</a></li>
-            <li><a class="dropdown-item" href="diagnostic">Diagnostik</a></li>
-            <li><a class="dropdown-item" href="misc">Sonstige Behandlungen</a></li>
-            <li><a class="dropdown-item" href="services">Service</a></li>
+            <li><a class="dropdown-item" href="chirotherapy">{{ gettext("Chirotherapie") }}</a></li>
+            <li><a class="dropdown-item" href="checkups">{{ gettext("Check-up") }}</a></li>
+            <li><a class="dropdown-item" href="diagnostic">{{ gettext("Diagnostics") }}</a></li>
+            <li><a class="dropdown-item" href="misc">{{ gettext("Misc") }}</a></li>
+            <li><a class="dropdown-item" href="services">{{ gettext("More") }}</a></li>
           </ul>
         </li>
 
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Unsere Praxis
+            {{ gettext("Who we are") }}
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="team">Unser Team</a></li>
-            <li><a class="dropdown-item" href="location">Praxis Rundgang</a></li>
+            <li><a class="dropdown-item" href="team">{{ gettext("Our Team") }}</a></li>
+            <li><a class="dropdown-item" href="location">{{ gettext("The Facility") }}</a></li>
           </ul>
         </li>
 
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Kontakt
+            {{ gettext("Contact") }}
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="Arrival">Anfahrt</a></li>
-            <li><a class="dropdown-item" href="Appointment">Termine</a></li>
+            <li><a class="dropdown-item" href="Arrival">{{ gettext("Arrival") }}</a></li>
+            <li><a class="dropdown-item" href="Appointment">{{ gettext("Appointment") }}</a></li>
           </ul>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="jobs">Stellenangebote</a>
+          <a class="nav-link" aria-current="page" href="jobs">{{ gettext("Jobs") }}</a>
         </li>
 
       </ul>
 
       <div id="lang-container" class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navLangDrop" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          <span class="flag-icon flag-icon-de"> </span> Language
+          <span class="flag-icon flag-icon-de"> </span> {{ gettext("Language") }}
         </a>
         <ul class="dropdown-menu" aria-labelledby="navLangDrop">
             <li><a class="dropdown-item" href="de"><span class="flag-icon flag-icon-de"> </span>  Deutsch</a></li>
@@ -65,7 +65,7 @@
 
       <form class="d-flex">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
+        <button class="btn btn-outline-success" type="submit">{{ gettext("Search") }}</button>
       </form>
     </div>
   </div>

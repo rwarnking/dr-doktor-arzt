@@ -1,8 +1,20 @@
-from flask import render_template
+from flask import render_template, Blueprint, g
 from flask_babel import gettext
 from app import app
 
-@app.route('/')
+multilingual = Blueprint('multilingual', __name__, template_folder='templates', url_prefix='/<lang_code>')
+
+
+@multilingual.url_defaults
+def add_language_code(endpoint, values):
+    values.setdefault('lang_code', g.lang_code)
+
+@multilingual.url_value_preprocessor
+def pull_lang_code(endpoint, values):
+    g.lang_code = values.pop('lang_code')
+
+
+@multilingual.route('/')
 #@app.route('/[a-z]{2}')
 def startpage(name='René'):
 
@@ -10,7 +22,7 @@ def startpage(name='René'):
     #json_obj = hallormeinjsonloader(path)
 
     #return render_template('mainpage.html', json_obj)
-    return render_template('mainpage.html', name=name)
+    return render_template('multilingual/mainpage.html', name=name)
 
 #@app.route('/gb')
 #def hello(name='René'):
@@ -22,12 +34,12 @@ def startpage(name='René'):
     #return render_template('mainpage.html', name=name)
 
 
-@app.route('/diagnostic')
+@multilingual.route('/diagnostic')
 def diagnostic():
-    return render_template('diagnostic.html')
+    return render_template('multilingual/diagnostic.html')
 
 
-@app.route('/team')
+@multilingual.route('/team')
 def team():
 
     doctor_dict = {
@@ -65,10 +77,10 @@ def team():
         },
     ]
 
-    return render_template('teampage.html', doctor_dict=doctor_dict, assistant_dict=assistant_dict)
+    return render_template('multilingual/teampage.html', doctor_dict=doctor_dict, assistant_dict=assistant_dict)
 
 
-@app.route('/location')
+@multilingual.route('/location')
 def location():
     tour_list = [
         {
@@ -115,8 +127,8 @@ def location():
         },
     ]
 
-    return render_template('location.html', tour_list=tour_list)
+    return render_template('multilingual/location.html', tour_list=tour_list)
 
-@app.route('/jobs')
+@multilingual.route('/jobs')
 def jobs():
-    return render_template('jobs.html')
+    return render_template('multilingual/jobs.html')
