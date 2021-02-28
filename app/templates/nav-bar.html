@@ -16,11 +16,11 @@
             {{ gettext("Services") }}
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="chirotherapy">{{ gettext("Chirotherapie") }}</a></li>
-            <li><a class="dropdown-item" href="checkups">{{ gettext("Check-up") }}</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('multilingual.diagnostic') }}">{{ gettext("Diagnostics") }}</a></li>
-            <li><a class="dropdown-item" href="misc">{{ gettext("Misc") }}</a></li>
-            <li><a class="dropdown-item" href="services">{{ gettext("More") }}</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('multilingual.services') + '#chirotherapy' }}">{{ gettext("Chirotherapie") }}</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('multilingual.services') + '#checkups' }}">{{ gettext("Check-up") }}</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('multilingual.services') + '#diagnostic' }}">{{ gettext("Diagnostics") }}</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('multilingual.services') + '#misc' }}">{{ gettext("Misc") }}</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('multilingual.services') + '#more' }}">{{ gettext("More") }}</a></li>
           </ul>
         </li>
 
@@ -29,8 +29,8 @@
             {{ gettext("Who we are") }}
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="team">{{ gettext("Our Team") }}</a></li>
-            <li><a class="dropdown-item" href="location">{{ gettext("The Facility") }}</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('multilingual.team') }}">{{ gettext("Our Team") }}</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('multilingual.location') }}">{{ gettext("The Facility") }}</a></li>
           </ul>
         </li>
 
@@ -39,8 +39,8 @@
             {{ gettext("Contact") }}
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="Arrival">{{ gettext("Arrival") }}</a></li>
-            <li><a class="dropdown-item" href="Appointment">{{ gettext("Appointment") }}</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('multilingual.arrival') }}">{{ gettext("Arrival") }}</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('multilingual.appointment') }}">{{ gettext("Appointment") }}</a></li>
           </ul>
         </li>
 
@@ -52,14 +52,16 @@
 
       <div id="lang-container" class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navLangDrop" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          <span class="flag-icon flag-icon-de"> </span> {{ gettext("Language") }}
+          <span class="flag-icon flag-icon-{{ gettext("gb") }}"> </span> {{ gettext("Language") }}
         </a>
         <ul class="dropdown-menu" aria-labelledby="navLangDrop">
           {% for item in languages %}
-            <li><a class="dropdown-item" href="{{ url_for(request.endpoint, lang_code=languages[loop.index0].abriv) }}">
-              <span class="flag-icon flag-icon-{{languages[loop.index0].flag}}"> </span>
-              {{languages[loop.index0].lang}}
-            </a></li>
+            <li>
+              <a class="dropdown-item" href="{{ url_for(request.endpoint, lang_code=languages[loop.index0].abriv) }}">
+                <span class="flag-icon flag-icon-{{languages[loop.index0].flag}}"></span>
+                {{languages[loop.index0].lang}}
+              </a>
+            </li>
           {% endfor %}
         </ul>
       </div>

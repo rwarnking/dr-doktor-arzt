@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-02-28 18:01+0100\n"
+"POT-Creation-Date: 2021-02-28 21:59+0100\n"
 "PO-Revision-Date: 2021-02-28 18:01+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -17,6 +17,10 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.0\n"
+
+#: app/blueprints/multilingual/routes.py:95
+msgid "Meeting room"
+msgstr "Besprechungszimmer"
 
 #: app/templates/nav-bar.html:11
 msgid "Mainpage"
@@ -75,10 +79,17 @@ msgid "Jobs"
 msgstr "Stellenangebote"
 
 #: app/templates/nav-bar.html:55
+msgid "gb"
+msgstr "de"
+
+#: app/templates/nav-bar.html:55
 msgid "Language"
 msgstr "Sprache"
 
-#: app/templates/nav-bar.html:68
+#: app/templates/nav-bar.html:71
 msgid "Search"
 msgstr "Suche"
+
+#~ msgid "Besprechungszimmer"
+#~ msgstr ""
 

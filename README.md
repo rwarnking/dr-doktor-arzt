@@ -13,3 +13,8 @@ bootstrap
     - https://phrase.com/blog/posts/python-localization-flask-applications/
     - https://medium.com/@nicolas_84494/flask-create-a-multilingual-web-application-with-language-specific-urls-5d994344f5fd
 - Bootstrap
+
+# Usefull commands
+- pybabel extract -F babel.cfg -o messages.pot .
+- pybabel init -i messages.pot -d translations -l de
+- pybabel update -i messages.pot -d translations

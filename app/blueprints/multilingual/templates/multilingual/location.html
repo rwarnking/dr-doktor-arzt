@@ -8,15 +8,15 @@
 {% block main %}
 
 <div class="container marketing mt-4">
-    {% for item in tour_list %}
+    {% for item in location_list %}
     <div class="row featurette">
         {% if loop.index0 % 2 == 0 %}
         <div class="col-md-7">
         {% else %}
         <div class="col-md-7 order-md-2">
         {% endif %}
-            <h2 class="featurette-heading">{{ tour_list[loop.index0].titel }}</h2>
-            <p class="lead">{{ tour_list[loop.index0].text }}</p>
+            <h2 class="featurette-heading">{{ location_list[loop.index0].titel }}</h2>
+            <p class="lead">{{ location_list[loop.index0].text }}</p>
         </div>
 
         {% if loop.index0 % 2 == 0 %}
@@ -24,7 +24,7 @@
         {% else %}
         <div class="col-md-5 order-md-1">
         {% endif %}
-            <img src="{{ static_url_for('static', filename='img/office-tour/' + tour_list[loop.index0].img) }}"
+            <img src="{{ static_url_for('static', filename='img/office-tour/' + location_list[loop.index0].img) }}"
                 class="displayed d-block rounded w-100" alt="TODO" style="height: 40vh; object-fit: cover">
         </div>
     </div>
