@@ -1,11 +1,6 @@
-from flask import Flask, render_template
-from flask_static_digest import FlaskStaticDigest
-
-flask_static_digest = FlaskStaticDigest()
-
-app = Flask(__name__)
-
-flask_static_digest.init_app(app)
+from flask import render_template
+from flask_babel import gettext
+from app import app
 
 @app.route('/')
 #@app.route('/[a-z]{2}')
