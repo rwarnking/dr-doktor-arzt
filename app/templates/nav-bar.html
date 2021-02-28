@@ -18,7 +18,7 @@
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="chirotherapy">{{ gettext("Chirotherapie") }}</a></li>
             <li><a class="dropdown-item" href="checkups">{{ gettext("Check-up") }}</a></li>
-            <li><a class="dropdown-item" href="diagnostic">{{ gettext("Diagnostics") }}</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('multilingual.diagnostic') }}">{{ gettext("Diagnostics") }}</a></li>
             <li><a class="dropdown-item" href="misc">{{ gettext("Misc") }}</a></li>
             <li><a class="dropdown-item" href="services">{{ gettext("More") }}</a></li>
           </ul>
@@ -45,7 +45,7 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="jobs">{{ gettext("Jobs") }}</a>
+          <a class="nav-link" aria-current="page" href="{{ url_for('multilingual.jobs') }}">{{ gettext("Jobs") }}</a>
         </li>
 
       </ul>
@@ -55,11 +55,12 @@
           <span class="flag-icon flag-icon-de"> </span> {{ gettext("Language") }}
         </a>
         <ul class="dropdown-menu" aria-labelledby="navLangDrop">
-            <li><a class="dropdown-item" href="de"><span class="flag-icon flag-icon-de"> </span>  Deutsch</a></li>
-            <li><a class="dropdown-item" href="gb"><span class="flag-icon flag-icon-gb"> </span>  English</a></li>
-            <li><a class="dropdown-item" href="fr"><span class="flag-icon flag-icon-fr"> </span>  French</a></li>
-            <li><a class="dropdown-item" href="it"><span class="flag-icon flag-icon-it"> </span>  Italian</a></li>
-            <li><a class="dropdown-item" href="ru"><span class="flag-icon flag-icon-ru"> </span>  Russian</a></li>
+          {% for item in languages %}
+            <li><a class="dropdown-item" href="{{ url_for(request.endpoint, lang_code=languages[loop.index0].abriv) }}">
+              <span class="flag-icon flag-icon-{{languages[loop.index0].flag}}"> </span>
+              {{languages[loop.index0].lang}}
+            </a></li>
+          {% endfor %}
         </ul>
       </div>
 

@@ -1,4 +1,4 @@
-from flask import render_template, Blueprint, g
+from flask import render_template, Blueprint, g, redirect, request, current_app, abort, url_for
 from flask_babel import gettext
 from app import app
 
@@ -9,34 +9,38 @@ multilingual = Blueprint('multilingual', __name__, template_folder='templates', 
 def add_language_code(endpoint, values):
     values.setdefault('lang_code', g.lang_code)
 
+
 @multilingual.url_value_preprocessor
 def pull_lang_code(endpoint, values):
     g.lang_code = values.pop('lang_code')
 
 
+@multilingual.before_request
+def before_request():
+    if g.lang_code not in current_app.config['LANGUAGES']:
+        adapter = app.url_map.bind('')
+        try:
+            endpoint, args = adapter.match('/de' + request.full_path.rstrip('/ ?'))
+            return redirect(url_for(endpoint, **args), 301)
+        except:
+            abort(404)
+
+    dfl = request.url_rule.defaults
+    if 'lang_code' in dfl:
+        if dfl['lang_code'] != request.full_path.split('/')[1]:
+            abort(404)
+
+
 @multilingual.route('/')
-#@app.route('/[a-z]{2}')
 def startpage(name='René'):
-
-    # Deutsch
-    #json_obj = hallormeinjsonloader(path)
-
-    #return render_template('mainpage.html', json_obj)
-    return render_template('multilingual/mainpage.html', name=name)
-
-#@app.route('/gb')
-#def hello(name='René'):
-
-    # Englisch
-    #json_obj = hallormeinjsonloader(path)
-
-    #return render_template('mainpage.html', json_obj)
-    #return render_template('mainpage.html', name=name)
+    return render_template('multilingual/startpage.html', languages=current_app.config['LANGUAGE_DATA'])
 
 
-@multilingual.route('/diagnostic')
+@multilingual.route('/diagnostik', defaults={'lang_code': 'de'})
+@multilingual.route('/diagnostic', defaults={'lang_code': 'en'})
+@multilingual.route('/diagnostica', defaults={'lang_code': 'fr'})
 def diagnostic():
-    return render_template('multilingual/diagnostic.html')
+    return render_template('multilingual/diagnostic.html', languages=current_app.config['LANGUAGE_DATA'])
 
 
 @multilingual.route('/team')
@@ -77,7 +81,7 @@ def team():
         },
     ]
 
-    return render_template('multilingual/teampage.html', doctor_dict=doctor_dict, assistant_dict=assistant_dict)
+    return render_template('multilingual/teampage.html', languages=current_app.config['LANGUAGE_DATA'], doctor_dict=doctor_dict, assistant_dict=assistant_dict)
 
 
 @multilingual.route('/location')
@@ -127,8 +131,11 @@ def location():
         },
     ]
 
-    return render_template('multilingual/location.html', tour_list=tour_list)
+    return render_template('multilingual/location.html', languages=current_app.config['LANGUAGE_DATA'], tour_list=tour_list)
 
-@multilingual.route('/jobs')
+@multilingual.route('/Stellenangebote', defaults={'lang_code': 'de'})
+@multilingual.route('/Jobs', defaults={'lang_code': 'en'})
+@multilingual.route('/Offres', defaults={'lang_code': 'fr'})
+# @multilingual.route('/jobs')
 def jobs():
-    return render_template('multilingual/jobs.html')
+    return render_template('multilingual/jobs.html', languages=current_app.config['LANGUAGE_DATA'])
