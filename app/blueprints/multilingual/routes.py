@@ -1,7 +1,7 @@
 from flask import render_template, Blueprint, g, redirect, request, current_app, abort, url_for
 from flask_babel import gettext
 from app import app
-from .data_loader import get_assistant_list, get_doctor_list, get_location_list, get_service_dict
+from .data_loader import get_assistant_list, get_doctor_list, get_job_list, get_location_list, get_service_dict
 
 multilingual = Blueprint('multilingual', __name__, template_folder='templates', url_prefix='/<lang_code>')
 
@@ -69,18 +69,19 @@ def location():
 @multilingual.route('/arrival', defaults={'lang_code': 'en'})
 @multilingual.route('/arrivée', defaults={'lang_code': 'fr'})
 def arrival():
-    return render_template('multilingual/jobs.html', languages=current_app.config['LANGUAGE_DATA'])
+    return render_template('multilingual/arrival.html', languages=current_app.config['LANGUAGE_DATA'])
 
 
 @multilingual.route('/termine', defaults={'lang_code': 'de'})
 @multilingual.route('/appointment', defaults={'lang_code': 'en'})
 @multilingual.route('/rencontre', defaults={'lang_code': 'fr'})
 def appointment():
-    return render_template('multilingual/jobs.html', languages=current_app.config['LANGUAGE_DATA'])
+    return render_template('multilingual/appointment.html', languages=current_app.config['LANGUAGE_DATA'])
 
 
 @multilingual.route('/stellenangebote', defaults={'lang_code': 'de'})
 @multilingual.route('/jobs', defaults={'lang_code': 'en'})
 @multilingual.route('/offres', defaults={'lang_code': 'fr'})
 def jobs():
-    return render_template('multilingual/jobs.html', languages=current_app.config['LANGUAGE_DATA'])
+    job_list = get_job_list()
+    return render_template('multilingual/jobs.html', languages=current_app.config['LANGUAGE_DATA'], job_list=job_list)

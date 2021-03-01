@@ -25,7 +25,7 @@
         <div class="col-md-5 order-md-1">
         {% endif %}
             <img src="{{ static_url_for('static', filename='img/office-tour/' + location_list[loop.index0].img) }}"
-                class="displayed d-block rounded w-100" alt="TODO" style="height: 40vh; object-fit: cover">
+                class="displayed d-block rounded w-100" alt="{{ location_list[loop.index0].img }}" style="height: 40vh; object-fit: cover">
         </div>
     </div>
 

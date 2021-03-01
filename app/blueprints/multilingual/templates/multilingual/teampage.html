@@ -16,7 +16,7 @@
                 {% if val2 < doctor_list|length %}
                     <div class="col-lg-6">
                         <img src="{{ static_url_for('static', filename='img/staff/' + doctor_list[val2].img) }}"
-                            class="displayed d-block rounded w-100" alt="TODO" style="height: 50vh; object-fit: cover">
+                            class="displayed d-block rounded w-100" alt="{{ doctor_list[val2].img }}" style="height: 50vh; object-fit: cover">
                         <h2>{{ doctor_list[val2].name }}</h2>
                         <p>{{ doctor_list[val2].desc }}</p>
                         <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
@@ -36,7 +36,7 @@
                 {% if val2 < assistant_list|length %}
                     <div class="col-lg-4">
                         <img src="{{ static_url_for('static', filename='img/staff/' + assistant_list[val2].img) }}"
-                            class="displayed d-block rounded w-100" alt="TODO" style="height: 40vh; object-fit: cover">
+                            class="displayed d-block rounded w-100" alt="{{ assistant_list[val2].img }}" style="height: 40vh; object-fit: cover">
                         <h2>{{ assistant_list[val2].name }}</h2>
                         <p>{{ assistant_list[val2].desc }}</p>
                         <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>

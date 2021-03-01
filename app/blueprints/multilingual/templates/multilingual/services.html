@@ -21,7 +21,7 @@
           <div class="card shadow-sm">
             <!-- https://www.pexels.com/de-de/foto/ekg-maschine-liest-134-263194/ -->
             <img src="{{ static_url_for('static', filename='img/services/' + item.img) }}"
-                class="displayed d-block rounded w-100" alt="TODO" style="height: 40vh; object-fit: cover">
+                class="displayed d-block rounded w-100" alt="{{ item.img }}" style="height: 40vh; object-fit: cover">
 
             <div class="card-body">
               <p class="card-text">{{ item.name }}</p>

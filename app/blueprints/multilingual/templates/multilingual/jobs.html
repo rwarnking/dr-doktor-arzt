@@ -9,79 +9,44 @@
 
 <div class="container marketing mt-4">
 
+  {% for val in range((job_list|length / 2)|round(method="ceil")|int) %}
     <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
-        <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden w-50">
-        <div class="my-3 py-3">
-            <p class="lead">Wir suchen für unser Krankenhaus, ab sofort oder so bald wie möglich,</p>
-            <h2 class="display-6">
-                eine/n professionelle/n Hundestreichler/in
-            </h2>
-            <p class="lead" style="text-align: left;">Wir sind ein sehr erfolgreiches Krankenhaus für alle Arten von Krankheiten und für groß und klein.</p>
-            <p class="lead" style="text-align: left;">Wir bieten: </p>
-            <ul style="text-align: left;">
-                <li>Familiäre Arbeitsatmosphäre</li>
-                <li>Möglichkeiten zur Weiterbildung</li>
-                <li>Platz sich auszutoben</li>
-                <li>Super viel Geld</li>
-            </ul>
-            <p class="lead" style="text-align: left;">Wenn Sie interesse haben melden Sie sich gerne bei uns, oder kommen Sie doch einfach direkt bei uns vorbei und lernen Sie uns und die Räumlichkeiten kennen. Wir freuen uns auf Sie.</p>
-        </div>
-        </div>
-        <div class="bg-light  me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden w-50">
-        <div class="my-3 p-3">
-            <p class="lead">Wir suchen für unser Krankenhaus, ab sofort oder so bald wie möglich,</p>
-            <h2 class="display-6">
-                eine/n professionelle/n Hundestreichler/in
-            </h2>
-            <p class="lead" style="text-align: left;">Wir sind ein sehr erfolgreiches Krankenhaus für alle Arten von Krankheiten und für groß und klein.</p>
-            <p class="lead" style="text-align: left;">Wir bieten: </p>
-            <ul style="text-align: left;">
-                <li>Familiäre Arbeitsatmosphäre</li>
-                <li>Möglichkeiten zur Weiterbildung</li>
-                <li>Platz sich auszutoben</li>
-                <li>Super viel Geld</li>
-            </ul>
-            <p class="lead" style="text-align: left;">Wenn Sie interesse haben melden Sie sich gerne bei uns, oder kommen Sie doch einfach direkt bei uns vorbei und lernen Sie uns und die Räumlichkeiten kennen. Wir freuen uns auf Sie.</p>
-        </div>
-        </div>
-    </div>
 
-    <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
-        <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden w-50">
-        <div class="my-3 py-3">
-            <p class="lead">Wir suchen für unser Krankenhaus, ab sofort oder so bald wie möglich,</p>
-            <h2 class="display-6">
-                eine/n professionelle/n Hundestreichler/in
-            </h2>
-            <p class="lead" style="text-align: left;">Wir sind ein sehr erfolgreiches Krankenhaus für alle Arten von Krankheiten und für groß und klein.</p>
-            <p class="lead" style="text-align: left;">Wir bieten: </p>
-            <ul style="text-align: left;">
-                <li>Familiäre Arbeitsatmosphäre</li>
-                <li>Möglichkeiten zur Weiterbildung</li>
-                <li>Platz sich auszutoben</li>
-                <li>Super viel Geld</li>
-            </ul>
-            <p class="lead" style="text-align: left;">Wenn Sie interesse haben melden Sie sich gerne bei uns, oder kommen Sie doch einfach direkt bei uns vorbei und lernen Sie uns und die Räumlichkeiten kennen. Wir freuen uns auf Sie.</p>
-        </div>
-        </div>
-        <div class="bg-light  me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden w-50">
-        <div class="my-3 p-3">
-            <p class="lead">Wir suchen für unser Krankenhaus, ab sofort oder so bald wie möglich,</p>
-            <h2 class="display-6">
-                eine/n professionelle/n Hundestreichler/in
-            </h2>
-            <p class="lead" style="text-align: left;">Wir sind ein sehr erfolgreiches Krankenhaus für alle Arten von Krankheiten und für groß und klein.</p>
-            <p class="lead" style="text-align: left;">Wir bieten: </p>
-            <ul style="text-align: left;">
-                <li>Familiäre Arbeitsatmosphäre</li>
-                <li>Möglichkeiten zur Weiterbildung</li>
-                <li>Platz sich auszutoben</li>
-                <li>Super viel Geld</li>
-            </ul>
-            <p class="lead" style="text-align: left;">Wenn Sie interesse haben melden Sie sich gerne bei uns, oder kommen Sie doch einfach direkt bei uns vorbei und lernen Sie uns und die Räumlichkeiten kennen. Wir freuen uns auf Sie.</p>
-        </div>
-        </div>
+      {% for val2 in range(val * 2, (val + 1) * 2) %}
+        {% if val2 < job_list|length %}
+          <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden w-50">
+            <div class="my-3 py-3">
+              <p class="lead">Als Verstärkung für unser Team suchen wir zum nächstmöglichen Termin,</p>
+              <h2 class="display-6">
+                {{ job_list[val2].titel }}
+              </h2>
+              <p class="lead" style="text-align: left;">
+                Wir sind ein sehr erfolgreiches Krankenhaus für alle Arten von Krankheiten und für groß und klein.
+              </p>
+
+              <p class="lead" style="text-align: left;">Wir bieten: </p>
+              <ul style="text-align: left;">
+                {% for item in job_list[val2].offer %}
+                  <li>{{ item }}</li>
+                {% endfor %}
+              </ul>
+              <p class="lead" style="text-align: left;">Ihr Profil: </p>
+              <ul style="text-align: left;">
+                {% for item in job_list[val2].profile %}
+                  <li>{{ item }}</li>
+                {% endfor %}
+              </ul>
+
+              <p class="lead" style="text-align: left;">
+                Wenn Sie interesse haben melden Sie sich gerne bei uns, oder kommen Sie doch einfach direkt bei uns vorbei und lernen Sie uns und die Räumlichkeiten kennen. Wir  freuen uns auf Sie.
+              </p>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+
     </div>
+  {% endfor %}
 
 </div>
 
