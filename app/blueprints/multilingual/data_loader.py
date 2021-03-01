@@ -1,5 +1,31 @@
 from flask_babel import gettext
 
+def get_frontpage_entry_list():
+    return [
+        {
+            "titel": gettext(u"Main - Our facility"),
+            "text": gettext(u"Main - Our facility text"),
+            # https://www.pexels.com/de-de/foto/krankenhaus-neben-fahrzeugpark-und-strasse-bei-nacht-1692693/
+            "img1": "building-outside-night.jpg",
+            # https://www.pexels.com/photo/ambulance-architecture-building-business-263402/
+            "img2": "building-outside-day.jpg",
+        },
+        {
+            "titel": gettext(u"Main - Masks"),
+            "text": gettext(u"Main - Masks text"),
+            # https://www.pexels.com/photo/blue-single-use-medical-face-masks-4197565/
+            "img1": "protection-masks.jpg",
+            # https://www.pexels.com/de-de/foto/weisse-rote-und-blaue-blutenblatter-3993212/
+            "img2": "corona-virus.jpg",
+        },
+        {
+            "titel": gettext(u"Main - Corona"),
+            "text": gettext(u"Main - Corona text"),
+            # https://www.pexels.com/de-de/foto/weisse-rote-und-blaue-blutenblatter-3993212/
+            "img1": "corona-virus.jpg",
+            "img2": "",
+        },
+    ]
 
 def get_service_dict():
     service_dict = {

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-03-01 15:03+0100\n"
+"POT-Creation-Date: 2021-03-01 15:35+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,301 +18,325 @@ msgstr ""
 "Generated-By: Babel 2.9.0\n"
 
 #: app/blueprints/multilingual/data_loader.py:6
-#: app/blueprints/multilingual/data_loader.py:10
+msgid "Main - Our facility"
+msgstr ""
+
+#: app/blueprints/multilingual/data_loader.py:7
+msgid "Main - Our facility text"
+msgstr ""
+
+#: app/blueprints/multilingual/data_loader.py:14
+msgid "Main - Masks"
+msgstr ""
+
+#: app/blueprints/multilingual/data_loader.py:15
+msgid "Main - Masks text"
+msgstr ""
+
+#: app/blueprints/multilingual/data_loader.py:22
+msgid "Main - Corona"
+msgstr ""
+
+#: app/blueprints/multilingual/data_loader.py:23
+msgid "Main - Corona text"
+msgstr ""
+
+#: app/blueprints/multilingual/data_loader.py:32
+#: app/blueprints/multilingual/data_loader.py:36
 msgid "chirotherapy"
 msgstr ""
 
-#: app/blueprints/multilingual/data_loader.py:11
+#: app/blueprints/multilingual/data_loader.py:37
 msgid "chirotherapy desc"
 msgstr ""
 
-#: app/blueprints/multilingual/data_loader.py:16
+#: app/blueprints/multilingual/data_loader.py:42
 msgid "checkups"
 msgstr ""
 
-#: app/blueprints/multilingual/data_loader.py:20
+#: app/blueprints/multilingual/data_loader.py:46
 msgid "child-screening"
 msgstr ""
 
-#: app/blueprints/multilingual/data_loader.py:21
+#: app/blueprints/multilingual/data_loader.py:47
 msgid "child-screening desc"
 msgstr ""
 
-#: app/blueprints/multilingual/data_loader.py:28
+#: app/blueprints/multilingual/data_loader.py:54
 msgid "cancer-screening"
 msgstr ""
 
-#: app/blueprints/multilingual/data_loader.py:29
+#: app/blueprints/multilingual/data_loader.py:55
 msgid "cancer-screening desc"
 msgstr ""
 
-#: app/blueprints/multilingual/data_loader.py:36
+#: app/blueprints/multilingual/data_loader.py:62
 msgid "diabetes"
 msgstr ""
 
-#: app/blueprints/multilingual/data_loader.py:37
+#: app/blueprints/multilingual/data_loader.py:63
 msgid "diabetes desc"
 msgstr ""
 
-#: app/blueprints/multilingual/data_loader.py:44
+#: app/blueprints/multilingual/data_loader.py:70
 msgid "vaccine"
 msgstr ""
 
-#: app/blueprints/multilingual/data_loader.py:45
+#: app/blueprints/multilingual/data_loader.py:71
 msgid "vaccine desc"
 msgstr ""
 
-#: app/blueprints/multilingual/data_loader.py:50
+#: app/blueprints/multilingual/data_loader.py:76
 msgid "diagnostic"
 msgstr ""
 
-#: app/blueprints/multilingual/data_loader.py:54
+#: app/blueprints/multilingual/data_loader.py:80
 msgid "ekg"
 msgstr ""
 
-#: app/blueprints/multilingual/data_loader.py:55
+#: app/blueprints/multilingual/data_loader.py:81
 msgid "ekg desc"
 msgstr ""
 
-#: app/blueprints/multilingual/data_loader.py:62
+#: app/blueprints/multilingual/data_loader.py:88
 msgid "ultrasound"
 msgstr ""
 
-#: app/blueprints/multilingual/data_loader.py:63
+#: app/blueprints/multilingual/data_loader.py:89
 msgid "ultrasound desc"
 msgstr ""
 
-#: app/blueprints/multilingual/data_loader.py:70
+#: app/blueprints/multilingual/data_loader.py:96
 msgid "pulmonary-functions"
 msgstr ""
 
-#: app/blueprints/multilingual/data_loader.py:71
+#: app/blueprints/multilingual/data_loader.py:97
 msgid "pulmonary-functions desc"
 msgstr ""
 
-#: app/blueprints/multilingual/data_loader.py:78
+#: app/blueprints/multilingual/data_loader.py:104
 msgid "lab-tests"
 msgstr ""
 
-#: app/blueprints/multilingual/data_loader.py:79
+#: app/blueprints/multilingual/data_loader.py:105
 msgid "lab-tests desc"
 msgstr ""
 
-#: app/blueprints/multilingual/data_loader.py:86
+#: app/blueprints/multilingual/data_loader.py:112
 msgid "bone-density-measurement"
 msgstr ""
 
-#: app/blueprints/multilingual/data_loader.py:87
+#: app/blueprints/multilingual/data_loader.py:113
 msgid "bone-density-measurement desc"
 msgstr ""
 
-#: app/blueprints/multilingual/data_loader.py:92
+#: app/blueprints/multilingual/data_loader.py:118
 msgid "misc"
 msgstr ""
 
-#: app/blueprints/multilingual/data_loader.py:96
+#: app/blueprints/multilingual/data_loader.py:122
 msgid "foodadvice"
 msgstr ""
 
-#: app/blueprints/multilingual/data_loader.py:97
+#: app/blueprints/multilingual/data_loader.py:123
 msgid "foodadvice desc"
 msgstr ""
 
-#: app/blueprints/multilingual/data_loader.py:102
+#: app/blueprints/multilingual/data_loader.py:128
 msgid "more"
 msgstr ""
 
-#: app/blueprints/multilingual/data_loader.py:106
+#: app/blueprints/multilingual/data_loader.py:132
 msgid "pollen"
 msgstr ""
 
-#: app/blueprints/multilingual/data_loader.py:107
+#: app/blueprints/multilingual/data_loader.py:133
 msgid "pollen desc"
 msgstr ""
 
-#: app/blueprints/multilingual/data_loader.py:119
+#: app/blueprints/multilingual/data_loader.py:145
 msgid "Doktor Arzt M.D."
 msgstr ""
 
-#: app/blueprints/multilingual/data_loader.py:120
+#: app/blueprints/multilingual/data_loader.py:146
 msgid "Doktor Arzt desc"
 msgstr ""
 
-#: app/blueprints/multilingual/data_loader.py:125
+#: app/blueprints/multilingual/data_loader.py:151
 msgid "Doktorbruder Arzt M.D."
 msgstr ""
 
-#: app/blueprints/multilingual/data_loader.py:126
+#: app/blueprints/multilingual/data_loader.py:152
 msgid "Doktorbruder Arzt desc"
 msgstr ""
 
-#: app/blueprints/multilingual/data_loader.py:136
+#: app/blueprints/multilingual/data_loader.py:162
 msgid "Ms. Arzt Helferin"
 msgstr ""
 
-#: app/blueprints/multilingual/data_loader.py:137
+#: app/blueprints/multilingual/data_loader.py:163
 msgid "Arzt Helferin desc"
 msgstr ""
 
-#: app/blueprints/multilingual/data_loader.py:142
+#: app/blueprints/multilingual/data_loader.py:168
 msgid "Mr. Doktorhelfer Arzt"
 msgstr ""
 
-#: app/blueprints/multilingual/data_loader.py:143
+#: app/blueprints/multilingual/data_loader.py:169
 msgid "Doktorhelfer Arzt desc"
 msgstr ""
 
-#: app/blueprints/multilingual/data_loader.py:148
+#: app/blueprints/multilingual/data_loader.py:174
 msgid "Ms. Arzthelferin Doktor"
 msgstr ""
 
-#: app/blueprints/multilingual/data_loader.py:149
+#: app/blueprints/multilingual/data_loader.py:175
 msgid "Arzthelferin Doktor desc"
 msgstr ""
 
-#: app/blueprints/multilingual/data_loader.py:154
+#: app/blueprints/multilingual/data_loader.py:180
 msgid "Ms. Helferinnen Helferin"
 msgstr ""
 
-#: app/blueprints/multilingual/data_loader.py:155
+#: app/blueprints/multilingual/data_loader.py:181
 msgid "Helferinnen Helferin desc"
 msgstr ""
 
-#: app/blueprints/multilingual/data_loader.py:165
+#: app/blueprints/multilingual/data_loader.py:191
 msgid "Meeting room"
 msgstr ""
 
-#: app/blueprints/multilingual/data_loader.py:166
+#: app/blueprints/multilingual/data_loader.py:192
 msgid "Meeting room text"
 msgstr ""
 
-#: app/blueprints/multilingual/data_loader.py:171
+#: app/blueprints/multilingual/data_loader.py:197
 msgid "Chill Table"
 msgstr ""
 
-#: app/blueprints/multilingual/data_loader.py:172
+#: app/blueprints/multilingual/data_loader.py:198
 msgid "Chill Table text"
 msgstr ""
 
-#: app/blueprints/multilingual/data_loader.py:177
+#: app/blueprints/multilingual/data_loader.py:203
 msgid "Operating room"
 msgstr ""
 
-#: app/blueprints/multilingual/data_loader.py:178
+#: app/blueprints/multilingual/data_loader.py:204
 msgid "Operating room text"
 msgstr ""
 
-#: app/blueprints/multilingual/data_loader.py:183
+#: app/blueprints/multilingual/data_loader.py:209
 msgid "Modern Instruments"
 msgstr ""
 
-#: app/blueprints/multilingual/data_loader.py:184
+#: app/blueprints/multilingual/data_loader.py:210
 msgid "Modern Instruments text"
 msgstr ""
 
-#: app/blueprints/multilingual/data_loader.py:189
+#: app/blueprints/multilingual/data_loader.py:215
 msgid "Our Rooms"
 msgstr ""
 
-#: app/blueprints/multilingual/data_loader.py:190
+#: app/blueprints/multilingual/data_loader.py:216
 msgid "Our Rooms text"
 msgstr ""
 
-#: app/blueprints/multilingual/data_loader.py:195
+#: app/blueprints/multilingual/data_loader.py:221
 msgid "Waiting in the hallway"
 msgstr ""
 
-#: app/blueprints/multilingual/data_loader.py:196
+#: app/blueprints/multilingual/data_loader.py:222
 msgid "Waiting in the hallway text"
 msgstr ""
 
-#: app/blueprints/multilingual/data_loader.py:201
+#: app/blueprints/multilingual/data_loader.py:227
 msgid "Ms. Helferinnen Helferin at work"
 msgstr ""
 
-#: app/blueprints/multilingual/data_loader.py:202
+#: app/blueprints/multilingual/data_loader.py:228
 msgid "Ms. Helferinnen Helferin at work text"
 msgstr ""
 
-#: app/blueprints/multilingual/data_loader.py:212
+#: app/blueprints/multilingual/data_loader.py:238
 msgid "a Dog person"
 msgstr ""
 
-#: app/blueprints/multilingual/data_loader.py:214
-#: app/blueprints/multilingual/data_loader.py:230
-#: app/blueprints/multilingual/data_loader.py:247
+#: app/blueprints/multilingual/data_loader.py:240
+#: app/blueprints/multilingual/data_loader.py:256
+#: app/blueprints/multilingual/data_loader.py:273
 msgid "good workclimate"
 msgstr ""
 
-#: app/blueprints/multilingual/data_loader.py:215
-#: app/blueprints/multilingual/data_loader.py:231
-#: app/blueprints/multilingual/data_loader.py:248
+#: app/blueprints/multilingual/data_loader.py:241
+#: app/blueprints/multilingual/data_loader.py:257
+#: app/blueprints/multilingual/data_loader.py:274
 msgid "education"
 msgstr ""
 
-#: app/blueprints/multilingual/data_loader.py:216
+#: app/blueprints/multilingual/data_loader.py:242
 msgid "space"
 msgstr ""
 
-#: app/blueprints/multilingual/data_loader.py:217
-#: app/blueprints/multilingual/data_loader.py:233
+#: app/blueprints/multilingual/data_loader.py:243
+#: app/blueprints/multilingual/data_loader.py:259
 msgid "more money"
 msgstr ""
 
-#: app/blueprints/multilingual/data_loader.py:220
+#: app/blueprints/multilingual/data_loader.py:246
 msgid "GCSE O-levels"
 msgstr ""
 
-#: app/blueprints/multilingual/data_loader.py:221
-#: app/blueprints/multilingual/data_loader.py:237
+#: app/blueprints/multilingual/data_loader.py:247
+#: app/blueprints/multilingual/data_loader.py:263
 msgid "Workexperience"
 msgstr ""
 
-#: app/blueprints/multilingual/data_loader.py:222
+#: app/blueprints/multilingual/data_loader.py:248
 msgid "written and spoken Animalknowledge"
 msgstr ""
 
-#: app/blueprints/multilingual/data_loader.py:228
+#: app/blueprints/multilingual/data_loader.py:254
 msgid "a cardiologist"
 msgstr ""
 
-#: app/blueprints/multilingual/data_loader.py:232
+#: app/blueprints/multilingual/data_loader.py:258
 msgid "big hearts"
 msgstr ""
 
-#: app/blueprints/multilingual/data_loader.py:236
+#: app/blueprints/multilingual/data_loader.py:262
 msgid "German doctorate"
 msgstr ""
 
-#: app/blueprints/multilingual/data_loader.py:238
+#: app/blueprints/multilingual/data_loader.py:264
 msgid "sciencific interest"
 msgstr ""
 
-#: app/blueprints/multilingual/data_loader.py:239
+#: app/blueprints/multilingual/data_loader.py:265
 msgid "very German language"
 msgstr ""
 
-#: app/blueprints/multilingual/data_loader.py:245
+#: app/blueprints/multilingual/data_loader.py:271
 msgid "a medical assistant"
 msgstr ""
 
-#: app/blueprints/multilingual/data_loader.py:249
+#: app/blueprints/multilingual/data_loader.py:275
 msgid "view onto the parkingspot"
 msgstr ""
 
-#: app/blueprints/multilingual/data_loader.py:250
+#: app/blueprints/multilingual/data_loader.py:276
 msgid "less money"
 msgstr ""
 
-#: app/blueprints/multilingual/data_loader.py:253
+#: app/blueprints/multilingual/data_loader.py:279
 msgid "finished school"
 msgstr ""
 
-#: app/blueprints/multilingual/data_loader.py:254
+#: app/blueprints/multilingual/data_loader.py:280
 msgid "Time"
 msgstr ""
 
-#: app/blueprints/multilingual/data_loader.py:255
+#: app/blueprints/multilingual/data_loader.py:281
 msgid "Russian language"
 msgstr ""
 

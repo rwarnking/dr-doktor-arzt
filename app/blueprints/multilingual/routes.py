@@ -1,7 +1,7 @@
 from flask import render_template, Blueprint, g, redirect, request, current_app, abort, url_for
 from flask_babel import gettext
 from app import app
-from .data_loader import get_assistant_list, get_doctor_list, get_job_list, get_location_list, get_service_dict
+from .data_loader import get_assistant_list, get_doctor_list, get_frontpage_entry_list, get_job_list, get_location_list, get_service_dict
 
 multilingual = Blueprint('multilingual', __name__, template_folder='templates', url_prefix='/<lang_code>')
 
@@ -33,8 +33,9 @@ def before_request():
 
 
 @multilingual.route('/')
-def startpage(name='René'):
-    return render_template('multilingual/startpage.html', languages=current_app.config['LANGUAGE_DATA'])
+def startpage():
+    frontpage_entry_list = get_frontpage_entry_list()
+    return render_template('multilingual/startpage.html', languages=current_app.config['LANGUAGE_DATA'], frontpage_entry_list=frontpage_entry_list)
 
 
 @multilingual.route('/leistungen', defaults={'lang_code': 'de'})
