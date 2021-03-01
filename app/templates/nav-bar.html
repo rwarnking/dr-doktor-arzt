@@ -16,11 +16,11 @@
             {{ gettext("Services") }}
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="{{ url_for('multilingual.services') + '#chirotherapy' }}">{{ gettext("Chirotherapie") }}</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('multilingual.services') + '#checkups' }}">{{ gettext("Check-up") }}</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('multilingual.services') + '#diagnostic' }}">{{ gettext("Diagnostics") }}</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('multilingual.services') + '#misc' }}">{{ gettext("Misc") }}</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('multilingual.services') + '#more' }}">{{ gettext("More") }}</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('multilingual.services') + '#' + gettext('chirotherapy') }}">{{ gettext("Chirotherapie") }}</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('multilingual.services') + '#' + gettext('checkups') }}">{{ gettext("Check-up") }}</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('multilingual.services') + '#' + gettext('diagnostic') }}">{{ gettext("Diagnostics") }}</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('multilingual.services') + '#' + gettext('misc') }}">{{ gettext("Misc") }}</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('multilingual.services') + '#' + gettext('more') }}">{{ gettext("More") }}</a></li>
           </ul>
         </li>
 

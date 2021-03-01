@@ -66,3 +66,23 @@ nav #lang-container:hover {
 nav #lang-container .nav-link {
     color: rgba(0,0,0,0.9);
 }
+
+.btn-border-only {
+    color: #fff;
+    background-color: #212529;
+    border-color: #212529;
+    border-width: 2px;
+    border-style: outset;
+}
+.btn-border-only:hover, .btn-border-only:focus, .btn-border-only:active, .btn-border-only.active, .open>.dropdown-toggle.btn-border-only {
+    color: #fff;
+    background-color: #212529;
+    border-color: #fff;
+}
+.btn-border-only-today {
+    color: #fff;
+    background-color: #6c757d;
+    border-color: #6c757d;
+    border-width: 2px;
+    border-style: outset;
+}
