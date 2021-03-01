@@ -36,11 +36,11 @@ msgstr "Bei uns können Sie unbegrenzt Masken bekommen und das schon für kein G
 
 #: app/blueprints/multilingual/data_loader.py:22
 msgid "Main - Corona"
-msgstr "Corona"
+msgstr "COVID 19"
 
 #: app/blueprints/multilingual/data_loader.py:23
 msgid "Main - Corona text"
-msgstr ""
+msgstr "COVID 19"
 "Eines Tages wird es vorbei sein und bis dahin sollten Sie sich bei uns "
 "Impfen lassen."
 
@@ -215,7 +215,7 @@ msgstr "Frau Helferinnen Helferin"
 msgid "Helferinnen Helferin desc"
 msgstr ""
 "Sie ist noch in der Ausbildung und muss deswegen noch recht viel Zeit "
-"damit verbringen Stöckchen werfen zu üben"
+"damit verbringen Stöckchen werfen zu üben."
 
 #: app/blueprints/multilingual/data_loader.py:191
 msgid "Meeting room"
@@ -230,7 +230,7 @@ msgstr ""
 
 #: app/blueprints/multilingual/data_loader.py:197
 msgid "Chill Table"
-msgstr "Entspannungs Tische"
+msgstr "Entspannungstische"
 
 #: app/blueprints/multilingual/data_loader.py:198
 msgid "Chill Table text"
@@ -323,7 +323,7 @@ msgstr "Super viel Geld"
 
 #: app/blueprints/multilingual/data_loader.py:246
 msgid "GCSE O-levels"
-msgstr "Realschule-Abschluss oder höher"
+msgstr "Realschulabschluss oder höher"
 
 #: app/blueprints/multilingual/data_loader.py:247
 #: app/blueprints/multilingual/data_loader.py:263
@@ -484,4 +484,3 @@ msgstr "Sprache"
 #: app/templates/nav-bar.html:71
 msgid "Search"
 msgstr "Suche"
-

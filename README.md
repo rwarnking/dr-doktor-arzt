@@ -30,5 +30,5 @@ bootstrap
 
 # Usefull commands
 - pybabel extract -F babel.cfg -o messages.pot .
-- pybabel init -i messages.pot -d translations -l de
-- pybabel update -i messages.pot -d translations
+- pybabel init -i messages.pot -d app/translations -l de
+- pybabel update -i messages.pot -d app/translations
