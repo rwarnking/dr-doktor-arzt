@@ -1,4 +1,4 @@
-from flask import render_template, Blueprint, g, redirect, request, current_app, abort, url_for
+from flask import render_template, Blueprint, g, redirect, request, current_app, abort, url_for, jsonify
 from flask_babel import gettext
 from app import app
 from .data_loader import get_assistant_list, get_doctor_list, get_frontpage_entry_list, get_job_list, get_location_list, get_service_dict
@@ -75,11 +75,34 @@ def arrival():
     return render_template('multilingual/arrival.html', languages=current_app.config['LANGUAGE_DATA'], position=position, layer=layer)
 
 
-@multilingual.route('/termine', defaults={'lang_code': 'de'})
-@multilingual.route('/appointment', defaults={'lang_code': 'en'})
-@multilingual.route('/rencontre', defaults={'lang_code': 'fr'})
+day_slots = [
+    ["08:00", "Free"], ["08:30", "Free"], ["09:00", "Taken"], ["09:30", "Free"],
+    ["10:00", "Taken"], ["10:30", "Free"], ["11:00", "Free"], ["11:30", "Free"],
+    ["12:00", "Free"], ["12:30", "Taken"], ["13:00", "Free"], ["13:30", "Free"],
+]
+
+@multilingual.route('/termine', defaults={'lang_code': 'de'}, methods=('GET', 'POST'))
+@multilingual.route('/appointment', defaults={'lang_code': 'en'}, methods=('GET', 'POST'))
+@multilingual.route('/rencontre', defaults={'lang_code': 'fr'}, methods=('GET', 'POST'))
 def appointment():
-    return render_template('multilingual/appointment.html', languages=current_app.config['LANGUAGE_DATA'])
+    def isFree(index):
+        return day_slots[0][1] == "Free"
+
+    if request.method == 'POST':
+        slot = request.args.get('slot')
+        app.logger.info(slot)
+        if slot and isFree(slot):
+            app.logger.info('free')
+            # change slot
+            day_slots[0][1] = "Taken"
+            return jsonify(success=True)
+        else:
+            #r eturn error slot already taken
+            return jsonify(success=False)
+
+    app.logger.info(day_slots[0][1])
+
+    return render_template('multilingual/appointment.html', languages=current_app.config['LANGUAGE_DATA'], day_slots=day_slots)
 
 
 @multilingual.route('/stellenangebote', defaults={'lang_code': 'de'})

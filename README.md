@@ -27,6 +27,8 @@ bootstrap
     - https://wiki.openstreetmap.org/wiki/DE:OSM_mit_Leaflet/Vorbereitung
 - Leaflet
     - https://leafletjs.com/examples/quick-start/
+- cash (cash-dom)
+- axios
 
 # Usefull commands
 - pybabel extract -F babel.cfg -o messages.pot .

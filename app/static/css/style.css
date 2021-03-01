@@ -86,3 +86,10 @@ nav #lang-container .nav-link {
     border-width: 2px;
     border-style: outset;
 }
+
+.time-taken {
+    background-color: #dc3545;
+}
+.time-free {
+    background-color: #28a745;
+}

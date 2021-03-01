@@ -11,13 +11,6 @@
   <h1>{{ gettext("Appointment") }}</h1>
 
   {% set week_days = ["Mo", "Di", "Mi", "Do", "Fr", "Sa", "So"] %}
-  {%
-    set day_slots = [
-      ["08:00", "Free"], ["08:30", "Free"], ["09:00", "Taken"], ["09:30", "Free"],
-      ["10:00", "Taken"], ["10:30", "Free"], ["11:00", "Free"], ["11:30", "Free"],
-      ["12:00", "Free"], ["12:30", "Taken"], ["13:00", "Free"], ["13:30", "Free"],
-    ]
-  %}
   {% set num_days = 31 %}
   {% set day = "Sa" %}
   {% set today = 13 %}
@@ -68,7 +61,7 @@
           <h4 class="my-0 fw-normal"> {{ day }}, {{ today }} {{ month }} {{ year }} </h4>
         </div>
 
-        <div class="card-body bg-dark">
+        <div id="appointment-hours" class="card-body bg-dark">
           {% for val in range(7) %}
             <div class="row">
               <div class="col" style="padding: 0">
@@ -77,9 +70,9 @@
               </div>
               <div class="col p-0">
                 {% if day_slots[loop.index0][1] == "Taken" %}
-                <button type="button" class="btn btn-lg w-100 btn-border-only" style="background-color: #dc3545;"> {{ day_slots[loop.index0][1] }} </button>
+                <button type="button" class="btn btn-lg w-100 btn-border-only timeslot time-taken"> {{ day_slots[loop.index0][1] }} </button>
                 {% else %}
-                <button type="button" class="btn btn-lg w-100 btn-border-only" style="background-color: #28a745;"> {{ day_slots[loop.index0][1] }} </button>
+                <button type="button" class="btn btn-lg w-100 btn-border-only timeslot time-free" data-slot="{{day_slots[loop.index0][0]}}"> {{ day_slots[loop.index0][1] }} </button>
                 {% endif %}
               </div>
               <div class="col" style="padding: 0">
@@ -90,9 +83,9 @@
               <div class="col" style="padding: 0">
                 {% if (val + 1) * 2 < day_slots|length %}
                   {% if day_slots[loop.index0 + 7][1] == "Taken" %}
-                  <button type="button" class="btn btn-lg w-100 btn-border-only" style="background-color: #dc3545;"> {{ day_slots[loop.index0 + 7][1] }} </button>
+                  <button type="button" class="btn btn-lg w-100 btn-border-only timeslot time-taken"> {{ day_slots[loop.index0 + 7][1] }} </button>
                   {% else %}
-                  <button type="button" class="btn btn-lg w-100 btn-border-only" style="background-color: #28a745;"> {{ day_slots[loop.index0 + 7][1] }} </button>
+                  <button type="button" class="btn btn-lg w-100 btn-border-only timeslot time-free" data-slot="{{day_slots[loop.index0][0]}}"> {{ day_slots[loop.index0 + 7][1] }} </button>
                   {% endif %}
                 {% endif %}
               </div>
