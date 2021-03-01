@@ -2,13 +2,13 @@
   <div class="container-fluid">
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <a class="navbar-brand" href="/">
+        <a class="navbar-brand" href="{{ url_for('multilingual.startpage') }}">
           <img src="{{ static_url_for('static', filename='img/logo.svg') }}" alt="TODO" width="30" height="24">
         </a>
 
         <li class="nav-item">
           <!-- TODO change apparence depending on active-->
-          <a class="nav-link active" aria-current="page" href="/">{{ gettext("Mainpage") }}</a>
+          <a class="nav-link active" aria-current="page" href="{{ url_for('multilingual.startpage') }}">{{ gettext("Mainpage") }}</a>
         </li>
 
         <li class="nav-item dropdown">
