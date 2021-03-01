@@ -8,7 +8,7 @@
 {% block main %}
 <!-- Extra div for centering -->
 <div class="container marketing mt-4">
-    <h1>Ärzte</h1>
+    <h1>{{ gettext("Doctors") }}</h1>
 
     {% for val in range((doctor_list|length / 2)|round(method="ceil")|int) %}
         <div class="row">
@@ -28,7 +28,7 @@
 
     <hr class="featurette-divider">
 
-    <h1>Arzthelfer-/innen</h1>
+    <h1>{{ gettext("Medical Staff") }}</h1>
 
     {% for val in range((assistant_list|length / 3)|round(method="ceil")|int) %}
         <div class="row">

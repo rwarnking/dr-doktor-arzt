@@ -16,21 +16,21 @@
         {% if val2 < job_list|length %}
           <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden w-50">
             <div class="my-3 py-3">
-              <p class="lead">Als Verstärkung für unser Team suchen wir zum nächstmöglichen Termin,</p>
+              <p class="lead"> {{ gettext("reinforcement") }} </p>
               <h2 class="display-6">
                 {{ job_list[val2].titel }}
               </h2>
               <p class="lead" style="text-align: left;">
-                Wir sind ein sehr erfolgreiches Krankenhaus für alle Arten von Krankheiten und für groß und klein.
+                {{ gettext("jobintro") }}
               </p>
 
-              <p class="lead" style="text-align: left;">Wir bieten: </p>
+              <p class="lead" style="text-align: left;"> {{ gettext("We have:") }} </p>
               <ul style="text-align: left;">
                 {% for item in job_list[val2].offer %}
                   <li>{{ item }}</li>
                 {% endfor %}
               </ul>
-              <p class="lead" style="text-align: left;">Ihr Profil: </p>
+              <p class="lead" style="text-align: left;"> {{ gettext("You have:") }} </p>
               <ul style="text-align: left;">
                 {% for item in job_list[val2].profile %}
                   <li>{{ item }}</li>
@@ -38,7 +38,7 @@
               </ul>
 
               <p class="lead" style="text-align: left;">
-                Wenn Sie interesse haben melden Sie sich gerne bei uns, oder kommen Sie doch einfach direkt bei uns vorbei und lernen Sie uns und die Räumlichkeiten kennen. Wir  freuen uns auf Sie.
+                {{ gettext("joboutro") }}
               </p>
             </div>
           </div>

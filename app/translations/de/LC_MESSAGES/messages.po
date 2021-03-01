@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-02-28 21:59+0100\n"
+"POT-Creation-Date: 2021-03-01 15:03+0100\n"
 "PO-Revision-Date: 2021-02-28 18:01+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -18,9 +18,372 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.0\n"
 
-#: app/blueprints/multilingual/routes.py:95
+#: app/blueprints/multilingual/data_loader.py:6
+#: app/blueprints/multilingual/data_loader.py:10
+msgid "chirotherapy"
+msgstr "Chirotherapie"
+
+#: app/blueprints/multilingual/data_loader.py:11
+msgid "chirotherapy desc"
+msgstr "Super Magic"
+
+#: app/blueprints/multilingual/data_loader.py:16
+msgid "checkups"
+msgstr "Vorsorgeuntersuchung"
+
+#: app/blueprints/multilingual/data_loader.py:20
+msgid "child-screening"
+msgstr "Kindervorsorge"
+
+#: app/blueprints/multilingual/data_loader.py:21
+msgid "child-screening desc"
+msgstr "Vorsorge falls die Kinder schwierig sind."
+
+#: app/blueprints/multilingual/data_loader.py:28
+msgid "cancer-screening"
+msgstr "Krebsvorsorge"
+
+#: app/blueprints/multilingual/data_loader.py:29
+msgid "cancer-screening desc"
+msgstr "Angst"
+
+#: app/blueprints/multilingual/data_loader.py:36
+msgid "diabetes"
+msgstr "Diabeteseinstellungen DMP\""
+
+#: app/blueprints/multilingual/data_loader.py:37
+msgid "diabetes desc"
+msgstr "Zucker"
+
+#: app/blueprints/multilingual/data_loader.py:44
+msgid "vaccine"
+msgstr "Impfungen"
+
+#: app/blueprints/multilingual/data_loader.py:45
+msgid "vaccine desc"
+msgstr "Wichtig"
+
+#: app/blueprints/multilingual/data_loader.py:50
+msgid "diagnostic"
+msgstr "Diagnostik"
+
+#: app/blueprints/multilingual/data_loader.py:54
+msgid "ekg"
+msgstr "EKG"
+
+#: app/blueprints/multilingual/data_loader.py:55
+msgid "ekg desc"
+msgstr "EKG, Langzeit-EKG und Belastungs-EKG"
+
+#: app/blueprints/multilingual/data_loader.py:62
+msgid "ultrasound"
+msgstr "Ultraschalluntersuchungen"
+
+#: app/blueprints/multilingual/data_loader.py:63
+msgid "ultrasound desc"
+msgstr "für Kinder und Erwachsene, der Gelenke und der Schilddrüse"
+
+#: app/blueprints/multilingual/data_loader.py:70
+msgid "pulmonary-functions"
+msgstr "Lungenfunktionstest"
+
+#: app/blueprints/multilingual/data_loader.py:71
+msgid "pulmonary-functions desc"
+msgstr "Atmön"
+
+#: app/blueprints/multilingual/data_loader.py:78
+msgid "lab-tests"
+msgstr "Laboruntersuchungen"
+
+#: app/blueprints/multilingual/data_loader.py:79
+msgid "lab-tests desc"
+msgstr "Alles negativ"
+
+#: app/blueprints/multilingual/data_loader.py:86
+msgid "bone-density-measurement"
+msgstr "Knochendichtemessung"
+
+#: app/blueprints/multilingual/data_loader.py:87
+msgid "bone-density-measurement desc"
+msgstr "Aua"
+
+#: app/blueprints/multilingual/data_loader.py:92
+msgid "misc"
+msgstr "Spezielles"
+
+#: app/blueprints/multilingual/data_loader.py:96
+msgid "foodadvice"
+msgstr "Ernährungsberatung"
+
+#: app/blueprints/multilingual/data_loader.py:97
+msgid "foodadvice desc"
+msgstr "Nomnomnom"
+
+#: app/blueprints/multilingual/data_loader.py:102
+msgid "more"
+msgstr "Sonstiges"
+
+#: app/blueprints/multilingual/data_loader.py:106
+msgid "pollen"
+msgstr "Pollenflugkalender"
+
+#: app/blueprints/multilingual/data_loader.py:107
+msgid "pollen desc"
+msgstr "Huiiiiii"
+
+#: app/blueprints/multilingual/data_loader.py:119
+msgid "Doktor Arzt M.D."
+msgstr "Dr. Doktor Arzt"
+
+#: app/blueprints/multilingual/data_loader.py:120
+msgid "Doktor Arzt desc"
+msgstr ""
+"Doktor Arzt ist schon seit langem in der Medizin tätig, er hat alles "
+"erreicht und vielen Menschen geholfen."
+
+#: app/blueprints/multilingual/data_loader.py:125
+msgid "Doktorbruder Arzt M.D."
+msgstr "Dr. Doktorbruder Arzt"
+
+#: app/blueprints/multilingual/data_loader.py:126
+msgid "Doktorbruder Arzt desc"
+msgstr ""
+"Doktorbruder Arzt ist nicht ganz so erfolgreich wie Doktor Arzt. "
+"Eigentlich läuft Doktorbruder seinem Bruder die ganze Zeit nur hinterher."
+
+#: app/blueprints/multilingual/data_loader.py:136
+msgid "Ms. Arzt Helferin"
+msgstr "Frau Arzt Helferin"
+
+#: app/blueprints/multilingual/data_loader.py:137
+msgid "Arzt Helferin desc"
+msgstr ""
+"Sie ist jetzt schon seit vielen Jahren bei uns tätig und hat die meiste "
+"Zeit mit Dr. Doktor Arzt verbracht."
+
+#: app/blueprints/multilingual/data_loader.py:142
+msgid "Mr. Doktorhelfer Arzt"
+msgstr "Herr Doktorhelfer Arzt"
+
+#: app/blueprints/multilingual/data_loader.py:143
+msgid "Doktorhelfer Arzt desc"
+msgstr ""
+"Er ist der Mann für grobe, wenn Dr. Doktor Arzt irgendwo ein Problem "
+"sieht oder irgendwo nicht hinkommt, ist er zur Stelle."
+
+#: app/blueprints/multilingual/data_loader.py:148
+msgid "Ms. Arzthelferin Doktor"
+msgstr "Frau Arzthelferin Doktor"
+
+#: app/blueprints/multilingual/data_loader.py:149
+msgid "Arzthelferin Doktor desc"
+msgstr ""
+"Besonders im OP ist sie für Dr. Doktor Arzt da, sodass er niemals ins "
+"schwitzen kommt."
+
+#: app/blueprints/multilingual/data_loader.py:154
+msgid "Ms. Helferinnen Helferin"
+msgstr "Frau Helferinnen Helferin"
+
+#: app/blueprints/multilingual/data_loader.py:155
+msgid "Helferinnen Helferin desc"
+msgstr ""
+"Sie ist noch in der Ausbildung und muss deswegen noch recht viel Zeit "
+"damit verbringen Stöckchen werfen zu üben"
+
+#: app/blueprints/multilingual/data_loader.py:165
 msgid "Meeting room"
 msgstr "Besprechungszimmer"
+
+#: app/blueprints/multilingual/data_loader.py:166
+msgid "Meeting room text"
+msgstr ""
+"Im Besprechungszimmer kann Dr. Doktor Arzt Patienten behandeln, die keine"
+" direkten Körperlichen beschwerden haben. Das heißt hier können Gespräche"
+" über privates oder phsychische Probleme gehalten werden."
+
+#: app/blueprints/multilingual/data_loader.py:171
+msgid "Chill Table"
+msgstr "Entspannungs Tische"
+
+#: app/blueprints/multilingual/data_loader.py:172
+msgid "Chill Table text"
+msgstr ""
+"Die Gestaltung der Büroräume wurde von Dr. Doktor Arzt höchstpersönlich "
+"übernommen. Dabei hat er besonders auf eine gemütliche Atmosphäre "
+"geachtet."
+
+#: app/blueprints/multilingual/data_loader.py:177
+msgid "Operating room"
+msgstr "Unser Operationssaal"
+
+#: app/blueprints/multilingual/data_loader.py:178
+msgid "Operating room text"
+msgstr ""
+"Dies ist einer der Räume wo unsere Operationen durchgeführt werden. Aber "
+"keine Sorge die meisten Probleme und Krankheiten kann Dr. Doktor Arzt "
+"durch handauflegen behandeln und heilen."
+
+#: app/blueprints/multilingual/data_loader.py:183
+msgid "Modern Instruments"
+msgstr "Modernste Technik"
+
+#: app/blueprints/multilingual/data_loader.py:184
+msgid "Modern Instruments text"
+msgstr ""
+"Bei uns kommt nur die modernste Technik zum Einsatz um garantieren zu "
+"können, dass unsere Patienten die bestmögliche Behandlung erhalten. Dr. "
+"Doktor Arzt inspiziert die Geräte täglich und stellt sicher das alles "
+"nach seiner Schnauze läuft."
+
+#: app/blueprints/multilingual/data_loader.py:189
+msgid "Our Rooms"
+msgstr "Unsere Zimmer"
+
+#: app/blueprints/multilingual/data_loader.py:190
+msgid "Our Rooms text"
+msgstr ""
+"Unsere Betten sind unglaublich gemütlich und alle Patienten freuen sich "
+"über die Gesellschaft in den anliegenden Betten. Besonders wenn sie sich "
+"über die unglaublichen Geschichten austauschen können, die sie mit Dr. "
+"Doktor Arzt erleben."
+
+#: app/blueprints/multilingual/data_loader.py:195
+msgid "Waiting in the hallway"
+msgstr "Warten im Flur"
+
+#: app/blueprints/multilingual/data_loader.py:196
+msgid "Waiting in the hallway text"
+msgstr ""
+"Manchmal kann es sogar passieren, das sich ganze Gruppen von Menschen in "
+"unseren Fluren sammeln, nur um einmal einen Blick auf Dr. Doktor Arzt "
+"erhaschen zu können."
+
+#: app/blueprints/multilingual/data_loader.py:201
+msgid "Ms. Helferinnen Helferin at work"
+msgstr "Frau Helferinnen Helferin bei der Arbeit"
+
+#: app/blueprints/multilingual/data_loader.py:202
+msgid "Ms. Helferinnen Helferin at work text"
+msgstr ""
+"Die Arbeit hier ist vielfältig und aufregend, besonder wenn Dr. Doktor "
+"Arzt mal wieder im Raum ist, dann kann kaum einer die Hände bei sich "
+"halten."
+
+#: app/blueprints/multilingual/data_loader.py:212
+msgid "a Dog person"
+msgstr "eine/n professionelle/n Hundestreichler/in"
+
+#: app/blueprints/multilingual/data_loader.py:214
+#: app/blueprints/multilingual/data_loader.py:230
+#: app/blueprints/multilingual/data_loader.py:247
+msgid "good workclimate"
+msgstr "Familiäre Arbeitsatmosphäre"
+
+#: app/blueprints/multilingual/data_loader.py:215
+#: app/blueprints/multilingual/data_loader.py:231
+#: app/blueprints/multilingual/data_loader.py:248
+msgid "education"
+msgstr "Möglichkeiten zur Weiterbildung"
+
+#: app/blueprints/multilingual/data_loader.py:216
+msgid "space"
+msgstr "Platz sich auszutoben"
+
+#: app/blueprints/multilingual/data_loader.py:217
+#: app/blueprints/multilingual/data_loader.py:233
+msgid "more money"
+msgstr "Super viel Geld"
+
+#: app/blueprints/multilingual/data_loader.py:220
+msgid "GCSE O-levels"
+msgstr "Realschule-Abschluss oder höher"
+
+#: app/blueprints/multilingual/data_loader.py:221
+#: app/blueprints/multilingual/data_loader.py:237
+msgid "Workexperience"
+msgstr "Berufserfahrung"
+
+#: app/blueprints/multilingual/data_loader.py:222
+msgid "written and spoken Animalknowledge"
+msgstr "Gute Tierkenntnisse in Wort und Schrift"
+
+#: app/blueprints/multilingual/data_loader.py:228
+msgid "a cardiologist"
+msgstr "einen Facharzt Kardiologie m/w/d"
+
+#: app/blueprints/multilingual/data_loader.py:232
+msgid "big hearts"
+msgstr "Besonders große Herzen"
+
+#: app/blueprints/multilingual/data_loader.py:236
+msgid "German doctorate"
+msgstr "Deutsche Approbation"
+
+#: app/blueprints/multilingual/data_loader.py:238
+msgid "sciencific interest"
+msgstr "Wissenschaftliches Interesse"
+
+#: app/blueprints/multilingual/data_loader.py:239
+msgid "very German language"
+msgstr "Herausragende Deutschkenntnisse in Wort und Schrift"
+
+#: app/blueprints/multilingual/data_loader.py:245
+msgid "a medical assistant"
+msgstr "eine/n Arzthelfer/in"
+
+#: app/blueprints/multilingual/data_loader.py:249
+msgid "view onto the parkingspot"
+msgstr "Gute Aussicht auf den Parkplatz"
+
+#: app/blueprints/multilingual/data_loader.py:250
+msgid "less money"
+msgstr "Sehr wenig Geld"
+
+#: app/blueprints/multilingual/data_loader.py:253
+msgid "finished school"
+msgstr "Abgeschlossene Schullaufbahn"
+
+#: app/blueprints/multilingual/data_loader.py:254
+msgid "Time"
+msgstr "Viel Zeit"
+
+#: app/blueprints/multilingual/data_loader.py:255
+msgid "Russian language"
+msgstr "Gute Russischkenntnisse in Wort"
+
+#: app/blueprints/multilingual/templates/multilingual/jobs.html:19
+msgid "reinforcement"
+msgstr "Als Verstärkung für unser Team suchen wir zum nächstmöglichen Termin,"
+
+#: app/blueprints/multilingual/templates/multilingual/jobs.html:24
+msgid "jobintro"
+msgstr ""
+"Wir sind ein sehr erfolgreiches Krankenhaus für alle Arten von "
+"Krankheiten und für groß und klein."
+
+#: app/blueprints/multilingual/templates/multilingual/jobs.html:27
+msgid "We have:"
+msgstr "Wir bieten:"
+
+#: app/blueprints/multilingual/templates/multilingual/jobs.html:33
+msgid "You have:"
+msgstr "Ihr Profil:"
+
+#: app/blueprints/multilingual/templates/multilingual/jobs.html:41
+msgid "joboutro"
+msgstr ""
+"Wenn Sie interesse haben melden Sie sich gerne bei uns, oder kommen Sie "
+"doch einfach direkt bei uns vorbei und lernen Sie uns und die "
+"Räumlichkeiten kennen. Wir  freuen uns auf Sie."
+
+#: app/blueprints/multilingual/templates/multilingual/teampage.html:11
+msgid "Doctors"
+msgstr "Ärzte"
+
+#: app/blueprints/multilingual/templates/multilingual/teampage.html:31
+msgid "Medical Staff"
+msgstr "Arzthelfer/innen"
 
 #: app/templates/nav-bar.html:11
 msgid "Mainpage"
@@ -89,7 +452,4 @@ msgstr "Sprache"
 #: app/templates/nav-bar.html:71
 msgid "Search"
 msgstr "Suche"
-
-#~ msgid "Besprechungszimmer"
-#~ msgstr ""
 

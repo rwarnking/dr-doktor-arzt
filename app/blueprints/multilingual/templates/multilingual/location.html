@@ -8,28 +8,28 @@
 {% block main %}
 
 <div class="container marketing mt-4">
-    {% for item in location_list %}
+  {% for item in location_list %}
     <div class="row featurette">
-        {% if loop.index0 % 2 == 0 %}
-        <div class="col-md-7">
-        {% else %}
-        <div class="col-md-7 order-md-2">
-        {% endif %}
-            <h2 class="featurette-heading">{{ location_list[loop.index0].titel }}</h2>
-            <p class="lead">{{ location_list[loop.index0].text }}</p>
-        </div>
+      {% if loop.index0 % 2 == 0 %}
+      <div class="col-md-7">
+      {% else %}
+      <div class="col-md-7 order-md-2">
+      {% endif %}
+        <h2 class="featurette-heading">{{ location_list[loop.index0].titel }}</h2>
+        <p class="lead">{{ location_list[loop.index0].text }}</p>
+      </div>
 
-        {% if loop.index0 % 2 == 0 %}
-        <div class="col-md-5">
-        {% else %}
-        <div class="col-md-5 order-md-1">
-        {% endif %}
-            <img src="{{ static_url_for('static', filename='img/office-tour/' + location_list[loop.index0].img) }}"
-                class="displayed d-block rounded w-100" alt="{{ location_list[loop.index0].img }}" style="height: 40vh; object-fit: cover">
-        </div>
+      {% if loop.index0 % 2 == 0 %}
+      <div class="col-md-5">
+      {% else %}
+      <div class="col-md-5 order-md-1">
+      {% endif %}
+        <img src="{{ static_url_for('static', filename='img/office-tour/' + location_list[loop.index0].img) }}"
+          class="displayed d-block rounded w-100" alt="{{ location_list[loop.index0].img }}" style="height: 40vh; object-fit: cover">
+      </div>
     </div>
 
     <hr class="featurette-divider">
-    {% endfor %}
+  {% endfor %}
 </div>
 {% endblock %}
