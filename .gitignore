@@ -18,3 +18,7 @@ instance/
 
 node_modules
 app/static/*.js
+
+cache_manifest.json
+*.gz
+*.mo

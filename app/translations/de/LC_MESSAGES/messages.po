@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-03-01 15:35+0100\n"
+"POT-Creation-Date: 2021-03-01 18:14+0100\n"
 "PO-Revision-Date: 2021-02-28 18:01+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -378,6 +378,16 @@ msgstr "Viel Zeit"
 msgid "Russian language"
 msgstr "Gute Russischkenntnisse in Wort"
 
+#: app/blueprints/multilingual/templates/multilingual/appointment.html:2
+#: app/blueprints/multilingual/templates/multilingual/appointment.html:11
+#: app/templates/nav-bar.html:43
+msgid "Appointment"
+msgstr "Termine"
+
+#: app/blueprints/multilingual/templates/multilingual/appointment.html:109
+msgid "Appointment-Warning"
+msgstr "Termine können nur unter Angabe der Versichertennummer vergeben werden!"
+
 #: app/blueprints/multilingual/templates/multilingual/jobs.html:19
 msgid "reinforcement"
 msgstr "Als Verstärkung für unser Team suchen wir zum nächstmöglichen Termin,"
@@ -458,10 +468,6 @@ msgstr "Kontakt"
 #: app/templates/nav-bar.html:42
 msgid "Arrival"
 msgstr "Anfahrt"
-
-#: app/templates/nav-bar.html:43
-msgid "Appointment"
-msgstr "Termine"
 
 #: app/templates/nav-bar.html:48
 msgid "Jobs"
