@@ -69,7 +69,9 @@ def location():
 @multilingual.route('/arrival', defaults={'lang_code': 'en'})
 @multilingual.route('/arrivée', defaults={'lang_code': 'fr'})
 def arrival():
-    return render_template('multilingual/arrival.html', languages=current_app.config['LANGUAGE_DATA'])
+    position = [52.66796769973959, 7.937729225488056] # A random hospital (Quakenbrück Germany)
+    layer = 18
+    return render_template('multilingual/arrival.html', languages=current_app.config['LANGUAGE_DATA'], position=position, layer=layer)
 
 
 @multilingual.route('/termine', defaults={'lang_code': 'de'})
