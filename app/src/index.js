@@ -2,20 +2,54 @@ import $ from 'cash-dom'
 import axios from 'axios'
 
 window.addEventListener('DOMContentLoaded', () => {
-    $('#appointment-hours').on('click', '.timeslot.time-free', async function(event) {
+
+    // book a specific time slot
+    $('#appointment-hours').on('click', '.timeslot.time-free', async function() {
 
         const e = $(this);
-        const success = await axios.post('/de/termine', null, { params: { slot: e.data('slot') }})
-            .catch(() => false)
-            .then((r) => r.data.success)
+        const s = $('.selected-day');
 
-        if (success) {
-            alert('Okay!');
-            e.removeClass('time-free');
-            e.addClass('time-taken');
-            e.text('Taken')
-        } else {
-            alert('Nope!');
+        const html = await axios.post(`/en/appointment/${s.data('year')}/${s.data('month')}/${s.data('day')}/${e.data('slot')}`)
+            .catch(() => alert("invalid request"))
+            .then(response => response.data)
+
+        if (html) {
+            $('#appointment-hours').html(html);
         }
     });
+
+    // load all appointment slots for one day
+    $('#appointment-days').on('click', '.dayslot', async function() {
+
+        const e = $(this);
+        // unselect previously selected day
+        $('.selected-day').removeClass('selected-day');
+        // select day
+        e.addClass('selected-day');
+
+        const html = await axios.get(`/en/appointment/${e.data('year')}/${e.data('month')}/${e.data('day')}`)
+            .catch(() => alert("invalid request"))
+            .then(response => response.data)
+
+        if (html) {
+            $('#appointment-hours').html(html);
+        }
+    });
+
+    // $('#appointment-month').on('click', '.monthsdays', async function() {
+
+    //     const e = $(this);
+
+    //     $('.selected-month').removeClass('selected-month');
+    //     // select month
+    //     e.addClass('selected-month');
+
+    //     const html = await axios.get(`/en/appointment/${e.data('year')}/${e.data('month')}`)
+    //         .catch(() => alert("invalid request"))
+    //         .then(response => response.data)
+
+    //     if (html) {
+    //         $('#appointment-days').html(html);
+    //     }
+    // });
 });

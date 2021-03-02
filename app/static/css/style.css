@@ -76,7 +76,6 @@ nav #lang-container .nav-link {
 }
 .btn-border-only:hover, .btn-border-only:focus, .btn-border-only:active, .btn-border-only.active, .open>.dropdown-toggle.btn-border-only {
     color: #fff;
-    background-color: #212529;
     border-color: #fff;
 }
 .btn-border-only-today {
@@ -92,4 +91,8 @@ nav #lang-container .nav-link {
 }
 .time-free {
     background-color: #28a745;
+}
+.selected-day {
+    background-color: lightgray;
+    color: #212529;
 }

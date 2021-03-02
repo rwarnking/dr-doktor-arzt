@@ -1,0 +1,51 @@
+{% set num_days = 31 %}
+{% set week_days = ["Mo", "Di", "Mi", "Do", "Fr", "Sa", "So"] %}
+{% set month = 2 %}
+{% set year = "2021" %}
+
+<div class="row">
+  {% for item in week_days %}
+    <div class="col p-0">
+      <p class="btn-lg text-white w-100" style="margin: 0px; border: 1px solid transparent;"> {{ item }} </p>
+    </div>
+  {% endfor %}
+</div>
+
+{% for val in range((num_days / 7)|round(method="ceil")|int) %}
+  <div class="row">
+    {% for val2 in range(val * 7, (val + 1) * 7) %}
+      <div class="col p-0">
+        {% if val2+1 < selected_day %}
+        <button
+          disabled
+          type="button"
+          class="dayslot btn btn-lg w-100 btn-border-only-today"
+          data-year="{{year}}"
+          data-month="{{month}}"
+          data-day="{{val2+1}}">
+          {{ val2 + 1 }}
+        </button>
+        {% elif val2 < num_days and val2 == day - 1 %}
+        <button
+          type="button"
+          class="dayslot btn btn-lg w-100 btn-border-only-today {{ 'selected-day' if selected_day == val2+1 else '' }}"
+          data-year="{{year}}"
+          data-month="{{month}}"
+          data-day="{{val2+1}}">
+          {{ val2 + 1 }}
+        </button>
+        {% elif val2 < num_days %}
+        <button
+          type="button"
+          class="dayslot btn btn-lg w-100 btn-border-only {{ 'selected-day' if selected_day == val2+1 else '' }}"
+          data-year="{{year}}"
+          data-month="{{month}}"
+          data-day="{{val2+1}}">
+          {{ val2 + 1 }}
+        </button>
+        {% else %}
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+{% endfor %}

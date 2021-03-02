@@ -10,12 +10,7 @@
 
   <h1>{{ gettext("Appointment") }}</h1>
 
-  {% set week_days = ["Mo", "Di", "Mi", "Do", "Fr", "Sa", "So"] %}
-  {% set num_days = 31 %}
-  {% set day = "Sa" %}
-  {% set today = 13 %}
-  {% set month = "Februar" %}
-  {% set year = "2021" %}
+  {% set month_name = "Februar" %}
 
   <div class="row row-cols-1 row-cols-md-3 mb-2 text-center">
 
@@ -23,76 +18,19 @@
       <div class="card shadow-sm">
 
         <div class="card-header">
-          <h4 class="my-0 fw-normal">Month</h4>
+          <h4 class="my-0 fw-normal">{{ month_name }}</h4>
         </div>
 
-        <div class="card-body bg-dark h-100">
-          <div class="row">
-            {% for item in week_days %}
-            <div class="col p-0">
-              <p class="btn-lg text-white w-100" style="margin: 0px; border: 1px solid transparent;"> {{ item }} </p>
-            </div>
-            {% endfor %}
-          </div>
-
-          {% for val in range((num_days / 7)|round(method="ceil")|int) %}
-          <div class="row">
-            {% for val2 in range(val * 7, (val + 1) * 7) %}
-            <div class="col p-0">
-              {% if val2 < num_days and val2 == today - 1 %}
-              <button type="button" class="btn btn-lg w-100 btn-border-only-today"> {{ val2 + 1 }} </button>
-              {% elif val2 < num_days %}
-              <button type="button" class="btn btn-lg w-100 btn-border-only"> {{ val2 + 1 }} </button>
-              {% else %}
-              {% endif %}
-            </div>
-            {% endfor %}
-          </div>
-          {% endfor %}
+        <div id="appointment-days" class="card-body bg-dark h-100">
+          {% include 'appointment-days.html' with context %}
         </div>
 
       </div>
     </div>
 
     <div class="col-lg-6">
-      <div class="card shadow-sm">
-
-        <div class="card-header text-center">
-          <h4 class="my-0 fw-normal"> {{ day }}, {{ today }} {{ month }} {{ year }} </h4>
-        </div>
-
-        <div id="appointment-hours" class="card-body bg-dark">
-          {% for val in range(7) %}
-            <div class="row">
-              <div class="col" style="padding: 0">
-                <p class="btn-lg bg-dark text-white w-100" style="margin: 0px; border: 1px solid transparent;"> {{ day_slots[loop.index0][0] }} </p>
-
-              </div>
-              <div class="col p-0">
-                {% if day_slots[loop.index0][1] == "Taken" %}
-                <button type="button" class="btn btn-lg w-100 btn-border-only timeslot time-taken"> {{ day_slots[loop.index0][1] }} </button>
-                {% else %}
-                <button type="button" class="btn btn-lg w-100 btn-border-only timeslot time-free" data-slot="{{day_slots[loop.index0][0]}}"> {{ day_slots[loop.index0][1] }} </button>
-                {% endif %}
-              </div>
-              <div class="col" style="padding: 0">
-                {% if (val + 1) * 2 < day_slots|length %}
-                <p class="btn-lg bg-dark text-white w-100" style="margin: 0px; border: 1px solid transparent;"> {{ day_slots[loop.index0 + 7][0] }} </p>
-                {% endif %}
-              </div>
-              <div class="col" style="padding: 0">
-                {% if (val + 1) * 2 < day_slots|length %}
-                  {% if day_slots[loop.index0 + 7][1] == "Taken" %}
-                  <button type="button" class="btn btn-lg w-100 btn-border-only timeslot time-taken"> {{ day_slots[loop.index0 + 7][1] }} </button>
-                  {% else %}
-                  <button type="button" class="btn btn-lg w-100 btn-border-only timeslot time-free" data-slot="{{day_slots[loop.index0][0]}}"> {{ day_slots[loop.index0 + 7][1] }} </button>
-                  {% endif %}
-                {% endif %}
-              </div>
-            </div>
-          {% endfor %}
-        </div>
-
+      <div id="appointment-hours" class="card shadow-sm">
+        {% include 'appointment-slots.html' with context %}
       </div>
     </div>
 
