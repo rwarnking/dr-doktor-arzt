@@ -1,8 +1,11 @@
 from flask import render_template, Blueprint, g, redirect, request, current_app, abort, url_for, jsonify
 from flask_babel import gettext
+
+from datetime import datetime, date
 from app import app
+
 from .data_loader import get_assistant_list, get_doctor_list, get_frontpage_entry_list, get_job_list, get_location_list, get_service_dict
-from .appointment import days, days_per_month
+from .appointment import month_data, get_selected_date
 
 multilingual = Blueprint('multilingual', __name__, template_folder='templates', url_prefix='/<lang_code>')
 
@@ -80,34 +83,64 @@ def arrival():
 @multilingual.route('/appointment', defaults={'lang_code': 'en'})
 @multilingual.route('/rencontre', defaults={'lang_code': 'fr'})
 def appointment():
-    today = 13
-    day_slots = days[today-1];
-    return render_template('multilingual/appointment.html', languages=current_app.config['LANGUAGE_DATA'], day_slots=day_slots, selected_day=today, day=today)
+    day_today = datetime.today()
+    selected_date = get_selected_date(day_today)
+    day_slots = month_data[selected_date["month_idx"]][selected_date["day_idx"] - 1];
+
+    today = {
+        "day_idx" : day_today.day,
+        "month_idx" : day_today.month,
+        "year" : day_today.year,
+    }
+
+    app.logger.warning(day_today)
+    app.logger.warning(day_today.day)
+    app.logger.warning(selected_date)
+    app.logger.warning(selected_date["day_idx"] - 1)
+    app.logger.warning(today)
+
+    return render_template('multilingual/appointment.html', languages=current_app.config['LANGUAGE_DATA'], day_slots=day_slots, s_date=selected_date, today=today)
 
 
 @multilingual.route('/appointment/<int:year>/<int:month>/<int:day>/<int:slot>', methods=['POST'])
 def make_appointment(year, month, day, slot):
 
-    if days[day-1][slot][1] == "Free":
-        days[day-1][slot][1] = "Taken"
+    if month_data[month][day-1][slot][1] == "Free":
+        month_data[month][day-1][slot][1] = "Taken"
 
-    return render_template('appointment-slots.html', languages=current_app.config['LANGUAGE_DATA'], day_slots=days[day-1], selected_day=day)
+    day_slots = month_data[month][day-1];
 
+    selected_day = date(year, month, day)
+    selected_date = get_selected_date(selected_day)
 
-# @multilingual.route('/appointment/<int:year>/<int:month>')
-# def appointment_days(year, month):
-
-#     num_days = days_per_month(year, month)
-#     today = 1
-
-#     return render_template('appointment-days.html', languages=current_app.config['LANGUAGE_DATA'], num_days=num_days, today=today)
+    return render_template('appointment-slots.html', languages=current_app.config['LANGUAGE_DATA'], day_slots=day_slots, s_date=selected_date)
 
 
 @multilingual.route('/appointment/<int:year>/<int:month>/<int:day>')
 def appointment_slots(year, month, day):
 
-    day_slots = days[day-1]
-    return render_template('appointment-slots.html', languages=current_app.config['LANGUAGE_DATA'], day_slots=day_slots, selected_day=day)
+    day_slots = month_data[month][day-1]
+
+    selected_day = date(year, month, day)
+    selected_date = get_selected_date(selected_day)
+
+    return render_template('appointment-slots.html', languages=current_app.config['LANGUAGE_DATA'], day_slots=day_slots, s_date=selected_date)
+
+
+@multilingual.route('/appointment/<int:year>/<int:month>')
+def appointment_days(year, month):
+
+    selected_day = date(year, month, 1)
+    selected_date = get_selected_date(selected_day)
+
+    day_today = datetime.today()
+    today = {
+        "day_idx" : day_today.day,
+        "month_idx" : day_today.month,
+        "year" : day_today.year,
+    }
+
+    return render_template('appointment-days.html', languages=current_app.config['LANGUAGE_DATA'], s_date=selected_date, today=today)
 
 
 @multilingual.route('/stellenangebote', defaults={'lang_code': 'de'})

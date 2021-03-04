@@ -96,3 +96,11 @@ nav #lang-container .nav-link {
     background-color: lightgray;
     color: #212529;
 }
+
+.date-prev,
+.date-next {
+    height: 100%;
+    border-width:0px;
+    background-color:transparent;
+    filter: invert(100%);
+}

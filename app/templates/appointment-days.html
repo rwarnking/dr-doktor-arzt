@@ -1,51 +1,85 @@
-{% set num_days = 31 %}
-{% set week_days = ["Mo", "Di", "Mi", "Do", "Fr", "Sa", "So"] %}
-{% set month = 2 %}
-{% set year = "2021" %}
 
-<div class="row">
-  {% for item in week_days %}
-    <div class="col p-0">
-      <p class="btn-lg text-white w-100" style="margin: 0px; border: 1px solid transparent;"> {{ item }} </p>
+<div class="card-header">
+  <div class="row">
+    <div class="col-lg-4">
+      <button class="carousel-control-prev-icon m-0 date-prev"
+        data-year="{{ s_date.year }}"
+        data-month="{{ s_date.month_idx - 1 }}">
+      </button>
     </div>
-  {% endfor %}
+    <div class="col-lg-4">
+      <h4 class="my-0 fw-normal">{{ s_date.month_name }}</h4>
+    </div>
+    <div class="col-lg-4">
+      <button class="carousel-control-next-icon m-0 date-next"
+        data-year="{{ s_date.year }}"
+        data-month="{{ s_date.month_idx + 1 }}">
+      </button>
+    </div>
+  </div>
 </div>
 
-{% for val in range((num_days / 7)|round(method="ceil")|int) %}
+<div class="card-body bg-dark h-100">
+
+  {% set week_days = ["Mo", "Di", "Mi", "Do", "Fr", "Sa", "So"] %}
   <div class="row">
-    {% for val2 in range(val * 7, (val + 1) * 7) %}
+    {% for item in week_days %}
       <div class="col p-0">
-        {% if val2+1 < selected_day %}
-        <button
-          disabled
-          type="button"
-          class="dayslot btn btn-lg w-100 btn-border-only-today"
-          data-year="{{year}}"
-          data-month="{{month}}"
-          data-day="{{val2+1}}">
-          {{ val2 + 1 }}
-        </button>
-        {% elif val2 < num_days and val2 == day - 1 %}
-        <button
-          type="button"
-          class="dayslot btn btn-lg w-100 btn-border-only-today {{ 'selected-day' if selected_day == val2+1 else '' }}"
-          data-year="{{year}}"
-          data-month="{{month}}"
-          data-day="{{val2+1}}">
-          {{ val2 + 1 }}
-        </button>
-        {% elif val2 < num_days %}
-        <button
-          type="button"
-          class="dayslot btn btn-lg w-100 btn-border-only {{ 'selected-day' if selected_day == val2+1 else '' }}"
-          data-year="{{year}}"
-          data-month="{{month}}"
-          data-day="{{val2+1}}">
-          {{ val2 + 1 }}
-        </button>
-        {% else %}
-        {% endif %}
+        <p class="btn-lg text-white w-100" style="margin: 0px; border: 1px solid transparent;"> {{ item }} </p>
       </div>
     {% endfor %}
   </div>
-{% endfor %}
+
+  {% set offset = s_date.day_offset %}
+  {% set num_rows = 6 %}
+
+  {% for row in range(num_rows) %}
+    <div class="row">
+      {% for col in range(row * 7, (row + 1) * 7) %}
+        {% set col1 = col + 1 %}
+        {% set col1o = col1 - offset %}
+
+        {% set is_year = s_date.year == today.year %}
+        {% set was_year = s_date.year < today.year %}
+        {% set is_month = is_year and s_date.month_idx == today.month_idx %}
+        {% set was_month = is_year and s_date.month_idx < today.month_idx %}
+        {% set is_today = is_year and is_month and col1o == today.day_idx %}
+        {% set was_today = was_year or was_month or (is_month and col1o < today.day_idx) %}
+
+        <div class="col p-0">
+          {% if col < offset or col - offset >= s_date.month_days%}
+          {% elif was_today %}
+          <button
+            disabled
+            type="button"
+            class="btn btn-lg w-100 btn-border-only-today dayslot"
+            data-year="{{ s_date.year }}"
+            data-month="{{ s_date.month_idx }}"
+            data-day="{{ col1o }}">
+            {{ col1o }}
+          </button>
+          {% elif is_today %}
+          <button
+            type="button"
+            class="btn btn-lg w-100 btn-border-only-today dayslot selected-day {{ 's_date.day_idx' if s_date.day_idx == col1 else '' }}"
+            data-year="{{ s_date.year }}"
+            data-month="{{ s_date.month_idx }}"
+            data-day="{{ col1o }}">
+            {{ col1o }}
+          </button>
+          {% else %}
+          <button
+            type="button"
+            class="btn btn-lg w-100 btn-border-only dayslot {{ 's_date.day_idx' if s_date.day_idx == col1 else '' }}"
+            data-year="{{ s_date.year }}"
+            data-month="{{ s_date.month_idx }}"
+            data-day="{{ col1o }}">
+            {{ col1o }}
+          </button>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  {% endfor %}
+
+</div>

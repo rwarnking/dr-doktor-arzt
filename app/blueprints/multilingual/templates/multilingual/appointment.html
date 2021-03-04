@@ -10,21 +10,11 @@
 
   <h1>{{ gettext("Appointment") }}</h1>
 
-  {% set month_name = "Februar" %}
-
   <div class="row row-cols-1 row-cols-md-3 mb-2 text-center">
 
     <div class="col-lg-6">
-      <div class="card shadow-sm">
-
-        <div class="card-header">
-          <h4 class="my-0 fw-normal">{{ month_name }}</h4>
-        </div>
-
-        <div id="appointment-days" class="card-body bg-dark h-100">
-          {% include 'appointment-days.html' with context %}
-        </div>
-
+      <div id="appointment-days" class="card shadow-sm">
+        {% include 'appointment-days.html' with context %}
       </div>
     </div>
 

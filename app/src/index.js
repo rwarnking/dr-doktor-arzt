@@ -9,14 +9,15 @@ window.addEventListener('DOMContentLoaded', () => {
         const e = $(this);
         const s = $('.selected-day');
 
-        const html = await axios.post(`/en/appointment/${s.data('year')}/${s.data('month')}/${s.data('day')}/${e.data('slot')}`)
+        const hours_html = await axios.post(`/en/appointment/${s.data('year')}/${s.data('month')}/${s.data('day')}/${e.data('slot')}`)
             .catch(() => alert("invalid request"))
             .then(response => response.data)
 
-        if (html) {
-            $('#appointment-hours').html(html);
+        if (hours_html) {
+            $('#appointment-hours').html(hours_html);
         }
     });
+
 
     // load all appointment slots for one day
     $('#appointment-days').on('click', '.dayslot', async function() {
@@ -27,29 +28,81 @@ window.addEventListener('DOMContentLoaded', () => {
         // select day
         e.addClass('selected-day');
 
-        const html = await axios.get(`/en/appointment/${e.data('year')}/${e.data('month')}/${e.data('day')}`)
+        const hours_html = await axios.get(`/en/appointment/${e.data('year')}/${e.data('month')}/${e.data('day')}`)
             .catch(() => alert("invalid request"))
             .then(response => response.data)
 
-        if (html) {
-            $('#appointment-hours').html(html);
+        if (hours_html) {
+            $('#appointment-hours').html(hours_html);
         }
     });
 
-    // $('#appointment-month').on('click', '.monthsdays', async function() {
 
-    //     const e = $(this);
+    // load all appointment slots for one day
+    $('#appointment-hours').on('click', '.date-prev', async function() {
+        const e = $(this);
 
-    //     $('.selected-month').removeClass('selected-month');
-    //     // select month
-    //     e.addClass('selected-month');
+        const hours_html = await axios.get(`/en/appointment/${e.data('year')}/${e.data('month')}/${e.data('day')}`)
+            .catch(() => alert("invalid request"))
+            .then(response => response.data)
 
-    //     const html = await axios.get(`/en/appointment/${e.data('year')}/${e.data('month')}`)
-    //         .catch(() => alert("invalid request"))
-    //         .then(response => response.data)
+        if (hours_html) {
+            $('#appointment-hours').html(hours_html);
+        }
+    });
 
-    //     if (html) {
-    //         $('#appointment-days').html(html);
-    //     }
-    // });
+
+    $('#appointment-hours').on('click', '.date-next', async function() {
+        const e = $(this);
+
+        const hours_html = await axios.get(`/en/appointment/${e.data('year')}/${e.data('month')}/${e.data('day')}`)
+            .catch(() => alert("invalid request"))
+            .then(response => response.data)
+
+        if (hours_html) {
+            $('#appointment-hours').html(hours_html);
+        }
+    });
+
+
+    $('#appointment-days').on('click', '.date-prev', async function() {
+        const e = $(this);
+
+        const days_html = await axios.get(`/en/appointment/${e.data('year')}/${e.data('month')}`)
+            .catch(() => alert("invalid request"))
+            .then(response => response.data)
+
+        if (days_html) {
+            $('#appointment-days').html(days_html);
+        }
+
+        const hours_html = await axios.get(`/en/appointment/${e.data('year')}/${e.data('month')}/1`)
+            .catch(() => alert("invalid request"))
+            .then(response => response.data)
+
+        if (hours_html) {
+            $('#appointment-hours').html(hours_html);
+        }
+    });
+
+
+    $('#appointment-days').on('click', '.date-next', async function() {
+        const e = $(this);
+
+        const days_html = await axios.get(`/en/appointment/${e.data('year')}/${e.data('month')}`)
+            .catch(() => alert("invalid request"))
+            .then(response => response.data)
+
+        if (days_html) {
+            $('#appointment-days').html(days_html);
+        }
+
+        const hours_html = await axios.get(`/en/appointment/${e.data('year')}/${e.data('month')}/1`)
+            .catch(() => alert("invalid request"))
+            .then(response => response.data)
+
+        if (hours_html) {
+            $('#appointment-hours').html(hours_html);
+        }
+    });
 });

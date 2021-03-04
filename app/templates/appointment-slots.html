@@ -2,13 +2,26 @@
 {% set time = 0 %}
 {% set state = 1 %}
 
-{% set day_name = "Sa" %}
-{% set month = 2 %}
-{% set month_name = "Februar" %}
-{% set year = "2021" %}
-
 <div class="card-header text-center">
-  <h4 class="my-0 fw-normal"> {{ day_name }}, {{ selected_day }} {{ month_name }} {{ year }} </h4>
+  <div class="row">
+    <div class="col-lg-4">
+      <button class="carousel-control-prev-icon m-0 date-prev"
+        data-year="{{ s_date.year }}"
+        data-month="{{ s_date.month_idx }}"
+        data-day="{{ s_date.day_idx - 1 }}">
+      </button>
+    </div>
+    <div class="col-lg-4">
+      <h4 class="my-0 fw-normal"> {{ s_date.complete }} </h4>
+    </div>
+    <div class="col-lg-4">
+      <button class="carousel-control-next-icon m-0 date-next"
+        data-year="{{ s_date.year }}"
+        data-month="{{ s_date.month_idx }}"
+        data-day="{{ s_date.day_idx + 1 }}">
+      </button>
+    </div>
+  </div>
 </div>
 
 <div class="card-body bg-dark">
@@ -22,7 +35,7 @@
       </div>
       <div class="col p-0">
         {% if day_slots[loop.index0][state] == "Taken" %}
-        <button type="button" class="btn btn-lg w-100 btn-border-only timeslot time-taken">
+        <button disabled type="button" class="btn btn-lg w-100 btn-border-only timeslot time-taken">
           {{ day_slots[loop.index0][state] }}
         </button>
         {% else %}
@@ -41,7 +54,7 @@
       <div class="col" style="padding: 0">
         {% if (val + 1) * 2 <= day_slots|length %}
           {% if day_slots[loop.index0 + slots][state] == "Taken" %}
-          <button type="button" class="btn btn-lg w-100 btn-border-only timeslot time-taken">
+          <button disabled type="button" class="btn btn-lg w-100 btn-border-only timeslot time-taken">
             {{ day_slots[loop.index0 + slots][state] }}
           </button>
           {% else %}
