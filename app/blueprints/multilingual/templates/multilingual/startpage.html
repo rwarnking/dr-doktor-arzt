@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block main %}
-<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" style="height: 70vh">
+<div id="carouselExampleCaptions" class="carousel slide bg-dark" data-bs-ride="carousel" style="height: 70vh">
   <div class="carousel-indicators">
     {% for item in frontpage_entry_list %}
       {% if loop.index0 == 0 %}
@@ -32,15 +32,15 @@
         <img src="{{ static_url_for('static', filename='img/frontpage/' + item.img1) }}" class="d-block w-100" alt="{{ item.img1 }}">
         {% else %}
         <div class="row">
-          <div class="col-lg-6 bg-dark w-50">
+          <div class="col-lg-6 w-50">
             <img src="{{ static_url_for('static', filename='img/frontpage/' + item.img1) }}" class="displayed d-block rounded w-100" alt="{{ item.img1 }}">
           </div>
-          <div class="col-lg-6 bg-dark w-50">
+          <div class="col-lg-6 w-50">
             <img src="{{ static_url_for('static', filename='img/frontpage/' + item.img2) }}" class="displayed d-block rounded w-100" alt="{{ item.img2 }}">
           </div>
         </div>
         {% endif %}
-        <div class="carousel-caption d-none d-md-block text-dark" style="background-color: rgba(255,255,255,0.85);">
+        <div class="carousel-caption text-dark" style="background-color: rgba(255,255,255,0.85);">
           <h5> {{ item.titel }} </h5>
           <p> {{ item.text }} </p>
         </div>

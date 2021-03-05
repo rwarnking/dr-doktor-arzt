@@ -1,6 +1,34 @@
+/**************************************************************************************************
+ * Header
+ */
+.header {
+    width: 100%;
+    height: 15vh;
+    margin: 0;
+}
+
+.header .col-4 {
+    padding: 2vh;
+}
+
+.header h1 {
+    margin-bottom: 1vh;
+    height: min(7vh, 4vw);
+    line-height: min(7vh, 4vw);
+    font-size: min(6.6vh, 3.6vw);
+}
+
+.header p {
+    margin: 0;
+    height: min(3vh, 3vw);
+    line-height: min(3vh, 3vw);
+    font-size: min(2.6vh, 2.6vw);
+}
+
 hr.line-lr, hr.line-rl {
     height: 3px;
     opacity: 1;
+    margin: 1.5vh;
 }
 .line-lr {
     background: linear-gradient(45deg, lightgray, transparent);
@@ -15,11 +43,9 @@ hr.line-lr, hr.line-rl {
     justify-content: center;
 }
 
-IMG.displayed {
-    margin-left: auto;
-    margin-right: auto
-}
-
+/**************************************************************************************************
+ * Footer
+ */
 .footer {
     width: 100%;
     height: 10vh;
@@ -30,9 +56,13 @@ IMG.displayed {
     bottom: 0;
 }
 
-.row.footer, .row.banner {
+.row.footer {
     margin-right: 0;
     margin-left: 0;
+}
+
+.footer .col-4 {
+    padding: 2vh;
 }
 
 .footer div {
@@ -43,18 +73,15 @@ IMG.displayed {
 }
 .footer .text {
     margin: 0;
+    height: 2vh;
+    line-height: 2vh;
+    font-size: 1.6vh;
+    vertical-align:middle;
 }
 
-.carousel-item img {
-    height: 70vh;
-    object-fit: cover;
-}
-
-.carousel-inner .row {
-    margin-right: 0;
-    margin-left: 0;
-}
-
+/**************************************************************************************************
+ * Navbar
+ */
 nav #lang-container {
     float: right;
     color: rgba(0,0,0,0.9);
@@ -67,6 +94,50 @@ nav #lang-container .nav-link {
     color: rgba(0,0,0,0.9);
 }
 
+.navbar .navbar-brand {
+    padding: 1vh;
+    font-size: 1vh;
+}
+
+.navbar .nav-link {
+    padding: 1vh;
+    height: 5vh;
+    line-height: 3vh;
+    font-size: 1.9vh;
+}
+
+.navbar button, .navbar input{
+    padding: 0.5vh;
+    height: 4vh;
+    line-height: 3vh;
+    font-size: 1.9vh;
+}
+
+.navbar button {
+    margin-right: 1rem;
+}
+
+/**************************************************************************************************
+ * Frontpage
+ */
+.carousel-item img {
+    height: 70vh;
+    object-fit: cover;
+}
+
+.carousel-inner .row {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+IMG.displayed {
+    margin-left: auto;
+    margin-right: auto
+}
+
+/**************************************************************************************************
+ * Appointmentbuttons
+ */
 .btn-border-only {
     color: #fff;
     background-color: #212529;

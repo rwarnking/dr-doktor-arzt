@@ -93,11 +93,7 @@ def appointment():
         "year" : day_today.year,
     }
 
-    app.logger.warning(day_today)
-    app.logger.warning(day_today.day)
-    app.logger.warning(selected_date)
-    app.logger.warning(selected_date["day_idx"] - 1)
-    app.logger.warning(today)
+    # app.logger.warning(day_today)
 
     return render_template('multilingual/appointment.html', languages=current_app.config['LANGUAGE_DATA'], day_slots=day_slots, s_date=selected_date, today=today)
 

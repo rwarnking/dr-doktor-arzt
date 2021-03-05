@@ -41,26 +41,32 @@ window.addEventListener('DOMContentLoaded', () => {
     // load all appointment slots for one day
     $('#appointment-hours').on('click', '.date-prev', async function() {
         const e = $(this);
+        const prev = e.data('day');
 
-        const hours_html = await axios.get(`/en/appointment/${e.data('year')}/${e.data('month')}/${e.data('day')}`)
+        const hours_html = await axios.get(`/en/appointment/${e.data('year')}/${e.data('month')}/${prev}`)
             .catch(() => alert("invalid request"))
             .then(response => response.data)
 
         if (hours_html) {
             $('#appointment-hours').html(hours_html);
+            $('.selected-day').removeClass('selected-day');
+            $(`.dayslot[data-day="${prev}"]`).addClass('selected-day');
         }
     });
 
 
     $('#appointment-hours').on('click', '.date-next', async function() {
         const e = $(this);
+        const next = e.data('day');
 
-        const hours_html = await axios.get(`/en/appointment/${e.data('year')}/${e.data('month')}/${e.data('day')}`)
+        const hours_html = await axios.get(`/en/appointment/${e.data('year')}/${e.data('month')}/${next}`)
             .catch(() => alert("invalid request"))
             .then(response => response.data)
 
         if (hours_html) {
             $('#appointment-hours').html(hours_html);
+            $('.selected-day').removeClass('selected-day');
+            $(`.dayslot[data-day="${next}"]`).addClass('selected-day');
         }
     });
 

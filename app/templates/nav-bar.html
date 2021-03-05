@@ -1,13 +1,12 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light" style="height: 5vh">
-  <div class="container-fluid">
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="height: 5vh; padding: 0">
+  <div class="container-fluid p-0">
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <a class="navbar-brand" href="{{ url_for('multilingual.startpage') }}">
-          <img src="{{ static_url_for('static', filename='img/logo.svg') }}" alt="TODO" width="30" height="24">
+          <img src="{{ static_url_for('static', filename='img/logo.svg') }}" alt="img/logo.svg" style="height: 3vh; width: 3vh">
         </a>
 
         <li class="nav-item">
-          <!-- TODO change apparence depending on active-->
           <a class="nav-link active" aria-current="page" href="{{ url_for('multilingual.startpage') }}">{{ gettext("Mainpage") }}</a>
         </li>
 
