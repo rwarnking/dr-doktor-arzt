@@ -5,7 +5,9 @@ from datetime import datetime, date
 from app import app
 
 from .data_loader import get_assistant_list, get_doctor_list, get_frontpage_entry_list, get_job_list, get_location_list, get_service_dict
-from .appointment import month_data, get_selected_date
+from .appointment import get_selected_date
+
+import sqlite3 as sql
 
 multilingual = Blueprint('multilingual', __name__, template_folder='templates', url_prefix='/<lang_code>')
 
@@ -79,13 +81,56 @@ def arrival():
     return render_template('multilingual/arrival.html', languages=current_app.config['LANGUAGE_DATA'], position=position, layer=layer)
 
 
+
+DATABASE = 'database.db'
+
+def get_db():
+    db = getattr(g, '_database', None)
+    if db is None:
+        db = g._database = sql.connect(DATABASE)
+        db.row_factory = sql.Row
+    return db
+
+@app.teardown_appcontext
+def close_connection(exception):
+    db = getattr(g, '_database', None)
+    if db is not None:
+        db.close()
+
+def query_db(query, args=(), one=False):
+    cur = get_db().execute(query, args)
+    rv = cur.fetchall()
+    cur.close()
+    return (rv[0] if rv else None) if one else rv
+
+def insert_db(query, args=()):
+    cur = get_db()
+    cur.execute(query, args)
+    cur.commit()
+
+def get_day_slots(day_today):
+    day_slots = [
+        ["9:30", "Free"], ["10:00", "Free"], ["10:30", "Free"], ["11:00", "Free"],
+        ["11:30", "Free"], ["12:00", "Free"], ["12:30", "Free"], ["15:00", "Free"],
+        ["15:30", "Free"], ["16:00", "Free"], ["16:30", "Free"], ["17:00", "Free"],
+    ]
+
+    for appointment in query_db('select * from appointments where year=? and month=? and day=?', (day_today.year, day_today.month, day_today.day)):
+        day_slots[appointment["slot"]][1] = "Taken"
+
+    return day_slots
+
+def set_date_slot(date, slot):
+    insert_db("INSERT INTO appointments (year, month, day, slot) VALUES (?, ?, ?, ?)", (date.year, date.month, date.day, slot))
+
+
 @multilingual.route('/termine', defaults={'lang_code': 'de'})
 @multilingual.route('/appointment', defaults={'lang_code': 'en'})
 @multilingual.route('/rencontre', defaults={'lang_code': 'fr'})
 def appointment():
     day_today = datetime.today()
     selected_date = get_selected_date(day_today)
-    day_slots = month_data[selected_date["month_idx"]][selected_date["day_idx"] - 1];
+    day_slots = get_day_slots(day_today)
 
     today = {
         "day_idx" : day_today.day,
@@ -101,24 +146,23 @@ def appointment():
 @multilingual.route('/appointment/<int:year>/<int:month>/<int:day>/<int:slot>', methods=['POST'])
 def make_appointment(year, month, day, slot):
 
-    if month_data[month][day-1][slot][1] == "Free":
-        month_data[month][day-1][slot][1] = "Taken"
-
-    day_slots = month_data[month][day-1];
-
     selected_day = date(year, month, day)
     selected_date = get_selected_date(selected_day)
+
+    SLOT_COUNT = 12
+    if slot > -1 and slot < SLOT_COUNT:
+        set_date_slot(selected_day, slot)
+    day_slots = get_day_slots(selected_day)
 
     return render_template('appointment-slots.html', languages=current_app.config['LANGUAGE_DATA'], day_slots=day_slots, s_date=selected_date)
 
 
 @multilingual.route('/appointment/<int:year>/<int:month>/<int:day>')
 def appointment_slots(year, month, day):
-
-    day_slots = month_data[month][day-1]
-
     selected_day = date(year, month, day)
     selected_date = get_selected_date(selected_day)
+
+    day_slots = get_day_slots(selected_day)
 
     return render_template('appointment-slots.html', languages=current_app.config['LANGUAGE_DATA'], day_slots=day_slots, s_date=selected_date)
 
