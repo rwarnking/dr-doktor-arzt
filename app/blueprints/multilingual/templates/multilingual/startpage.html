@@ -6,15 +6,15 @@
 {% endblock %}
 
 {% block main %}
-<div id="carouselExampleCaptions" class="carousel slide bg-dark" data-bs-ride="carousel" style="height: 70vh">
+<div id="carouselExampleCaptions" class="carousel slide p-bg" data-bs-ride="carousel" style="height: 70vh">
   <div class="carousel-indicators">
     {% for item in frontpage_entry_list %}
       {% if loop.index0 == 0 %}
       <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0"
-        style="background-color:#000" class="active" aria-current="true" aria-label="Slide 1"></button>
+        class="p-bg active" aria-current="true" aria-label="Slide 1"></button>
       {% else %}
       <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="{{ loop.index0 }}"
-        style="background-color:#000" aria-label="Slide {{ loop.index1 }}"></button>
+        class="p-bg" aria-label="Slide {{ loop.index1 }}"></button>
       {% endif %}
     {% endfor %}
   </div>
@@ -40,7 +40,7 @@
           </div>
         </div>
         {% endif %}
-        <div class="carousel-caption text-dark" style="background-color: rgba(255,255,255,0.85);">
+        <div class="carousel-caption s-text trans-bg">
           <h5> {{ item.titel }} </h5>
           <p> {{ item.text }} </p>
         </div>

@@ -19,13 +19,13 @@
   </div>
 </div>
 
-<div class="card-body bg-dark h-100">
+<div class="card-body h-100 p-bg p-text">
 
   {% set week_days = ["Mo", "Di", "Mi", "Do", "Fr", "Sa", "So"] %}
   <div class="row">
     {% for item in week_days %}
       <div class="col p-0">
-        <p class="btn-lg text-white w-100" style="margin: 0px; border: 1px solid transparent;"> {{ item }} </p>
+        <p class="btn-lg w-100" style="margin: 0px; border: 1px solid transparent;"> {{ item }} </p>
       </div>
     {% endfor %}
   </div>

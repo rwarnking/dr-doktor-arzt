@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-03-01 18:14+0100\n"
+"POT-Creation-Date: 2021-03-12 17:15+0100\n"
 "PO-Revision-Date: 2021-02-28 18:01+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: fr\n"
@@ -43,7 +43,7 @@ msgid "Main - Corona text"
 msgstr "Un jour, ce sera fini et d'ici là, vous devriez être vacciné avec nous."
 
 #: app/blueprints/multilingual/data_loader.py:32
-#: app/blueprints/multilingual/data_loader.py:36
+#: app/blueprints/multilingual/data_loader.py:36 app/templates/nav-bar.html:18
 msgid "chirotherapy"
 msgstr "La Chirothérapie"
 
@@ -51,7 +51,7 @@ msgstr "La Chirothérapie"
 msgid "chirotherapy desc"
 msgstr "C'est magique!"
 
-#: app/blueprints/multilingual/data_loader.py:42
+#: app/blueprints/multilingual/data_loader.py:42 app/templates/nav-bar.html:19
 msgid "checkups"
 msgstr "Check-up médical"
 
@@ -87,7 +87,7 @@ msgstr "Les vaccinations"
 msgid "vaccine desc"
 msgstr "Important"
 
-#: app/blueprints/multilingual/data_loader.py:76
+#: app/blueprints/multilingual/data_loader.py:76 app/templates/nav-bar.html:20
 msgid "diagnostic"
 msgstr "Diagnostic"
 
@@ -131,7 +131,7 @@ msgstr "Mesure de la densité osseuse"
 msgid "bone-density-measurement desc"
 msgstr "Aie"
 
-#: app/blueprints/multilingual/data_loader.py:118
+#: app/blueprints/multilingual/data_loader.py:118 app/templates/nav-bar.html:21
 msgid "misc"
 msgstr "Spécial"
 
@@ -143,7 +143,7 @@ msgstr "Conseils nutritionnels"
 msgid "foodadvice desc"
 msgstr "Nomnomnom"
 
-#: app/blueprints/multilingual/data_loader.py:128
+#: app/blueprints/multilingual/data_loader.py:128 app/templates/nav-bar.html:22
 msgid "more"
 msgstr "Autres"
 
@@ -156,13 +156,15 @@ msgid "pollen desc"
 msgstr "Huiiiiii"
 
 #: app/blueprints/multilingual/data_loader.py:145
+#: app/blueprints/multilingual/templates/multilingual/startpage.html:2
 msgid "Doktor Arzt M.D."
 msgstr "Dr. Docteur Docteur"
 
 #: app/blueprints/multilingual/data_loader.py:146
 msgid "Doktor Arzt desc"
-msgstr "Docteur Docteur travaille en médecine depuis longtemps, "
-"il a tout réalisé et a aidé de nombreuses personnes."
+msgstr ""
+"Docteur Docteur travaille en médecine depuis longtemps, il a tout réalisé"
+" et a aidé de nombreuses personnes."
 
 #: app/blueprints/multilingual/data_loader.py:151
 msgid "Doktorbruder Arzt M.D."
@@ -170,8 +172,9 @@ msgstr "Dr. Docteur Frère Docteur"
 
 #: app/blueprints/multilingual/data_loader.py:152
 msgid "Doktorbruder Arzt desc"
-msgstr "Docteur Frère Docteur ne réussit pas aussi bien que le docteur Docteur."
-"Le docteur Docteur Frère suit en fait son frère tout le temps."
+msgstr ""
+"Docteur Frère Docteur ne réussit pas aussi bien que le docteur Docteur.Le"
+" docteur Docteur Frère suit en fait son frère tout le temps."
 
 #: app/blueprints/multilingual/data_loader.py:162
 msgid "Ms. Arzt Helferin"
@@ -179,8 +182,9 @@ msgstr "Madame Assistant Médecin"
 
 #: app/blueprints/multilingual/data_loader.py:163
 msgid "Arzt Helferin desc"
-msgstr "Elle est avec nous depuis de nombreuses années et a passé la plupart du temps "
-"avec le Dr. Docteur Docteur passé."
+msgstr ""
+"Elle est avec nous depuis de nombreuses années et a passé la plupart du "
+"temps avec le Dr. Docteur Docteur passé."
 
 #: app/blueprints/multilingual/data_loader.py:168
 msgid "Mr. Doktorhelfer Arzt"
@@ -188,8 +192,9 @@ msgstr "Monsieur Assistant Médecin"
 
 #: app/blueprints/multilingual/data_loader.py:169
 msgid "Doktorhelfer Arzt desc"
-msgstr "Il est l'homme du dur quand le Dr. Docteur Docteur voit un problème quelque "
-"part ou n'arrive pas à y arriver, il est là."
+msgstr ""
+"Il est l'homme du dur quand le Dr. Docteur Docteur voit un problème "
+"quelque part ou n'arrive pas à y arriver, il est là."
 
 #: app/blueprints/multilingual/data_loader.py:174
 msgid "Ms. Arzthelferin Doktor"
@@ -197,8 +202,9 @@ msgstr "Madame Médecin Assistant"
 
 #: app/blueprints/multilingual/data_loader.py:175
 msgid "Arzthelferin Doktor desc"
-msgstr "Surtout dans la salle d'opération, elle est pour le Dr. Docteur "
-"Docteur là-bas pour qu'il ne transpire jamais."
+msgstr ""
+"Surtout dans la salle d'opération, elle est pour le Dr. Docteur Docteur "
+"là-bas pour qu'il ne transpire jamais."
 
 #: app/blueprints/multilingual/data_loader.py:180
 msgid "Ms. Helferinnen Helferin"
@@ -206,8 +212,9 @@ msgstr "Madame Aides Aide"
 
 #: app/blueprints/multilingual/data_loader.py:181
 msgid "Helferinnen Helferin desc"
-msgstr "Elle est toujours à l'entraînement et doit donc passer beaucoup "
-"de temps à s'entraîner à lancer des bâtons."
+msgstr ""
+"Elle est toujours à l'entraînement et doit donc passer beaucoup de temps "
+"à s'entraîner à lancer des bâtons."
 
 #: app/blueprints/multilingual/data_loader.py:191
 msgid "Meeting room"
@@ -216,8 +223,9 @@ msgstr "Salle de réunion"
 #: app/blueprints/multilingual/data_loader.py:192
 #, fuzzy
 msgid "Meeting room text"
-msgstr "Dans la salle de conférence, Dr. Docteur Docteur traite les patients "
-"qui ne présentent aucun symptôme physique direct. Cela signifie que des "
+msgstr ""
+"Dans la salle de conférence, Dr. Docteur Docteur traite les patients qui "
+"ne présentent aucun symptôme physique direct. Cela signifie que des "
 "conversations sur des problèmes personnels ou psychologiques peuvent "
 "avoir lieu ici."
 
@@ -227,7 +235,8 @@ msgstr "Tables de détente"
 
 #: app/blueprints/multilingual/data_loader.py:198
 msgid "Chill Table text"
-msgstr "L'espace de bureau a été conçu par Dr. Docteur Docteur pris "
+msgstr ""
+"L'espace de bureau a été conçu par Dr. Docteur Docteur pris "
 "personnellement en charge. Il a accordé une attention particulière à une "
 "atmosphère chaleureuse."
 
@@ -239,9 +248,10 @@ msgstr "Notre salle d'opération"
 #: app/blueprints/multilingual/data_loader.py:204
 #, fuzzy
 msgid "Operating room text"
-msgstr "C'est l'une des salles où se déroulent nos opérations. Mais ne "
-"vous inquiétez pas, la plupart des problèmes et des maladies peuvent être "
-"le Dr. Docteur Docteur traitent et guérissent par l'imposition des mains."
+msgstr ""
+"C'est l'une des salles où se déroulent nos opérations. Mais ne vous "
+"inquiétez pas, la plupart des problèmes et des maladies peuvent être le "
+"Dr. Docteur Docteur traitent et guérissent par l'imposition des mains."
 
 #: app/blueprints/multilingual/data_loader.py:209
 msgid "Modern Instruments"
@@ -249,10 +259,10 @@ msgstr "Technologie de pointe"
 
 #: app/blueprints/multilingual/data_loader.py:210
 msgid "Modern Instruments text"
-msgstr "Nous n'utilisons que la technologie la plus moderne pour garantir "
-"à nos patients le meilleur traitement possible. Dr. Docteur Docteur "
-"inspecte les appareils quotidiennement et s'assure que tout se passe "
-"comme prévu."
+msgstr ""
+"Nous n'utilisons que la technologie la plus moderne pour garantir à nos "
+"patients le meilleur traitement possible. Dr. Docteur Docteur inspecte "
+"les appareils quotidiennement et s'assure que tout se passe comme prévu."
 
 #: app/blueprints/multilingual/data_loader.py:215
 msgid "Our Rooms"
@@ -260,9 +270,10 @@ msgstr "Nos chambres"
 
 #: app/blueprints/multilingual/data_loader.py:216
 msgid "Our Rooms text"
-msgstr "Nos lits sont incroyablement confortables et tous les patients "
-"apprécient la compagnie dans les lits adjacents. Surtout quand ils peuvent "
-"partager les histoires incroyables qu'ils ont avec le Dr. Docteur Docteur."
+msgstr ""
+"Nos lits sont incroyablement confortables et tous les patients apprécient"
+" la compagnie dans les lits adjacents. Surtout quand ils peuvent partager"
+" les histoires incroyables qu'ils ont avec le Dr. Docteur Docteur."
 
 #: app/blueprints/multilingual/data_loader.py:221
 msgid "Waiting in the hallway"
@@ -270,8 +281,9 @@ msgstr "Attendre dans le couloir"
 
 #: app/blueprints/multilingual/data_loader.py:222
 msgid "Waiting in the hallway text"
-msgstr "Parfois, il peut même arriver que des groupes entiers de personnes "
-"se rassemblent dans nos couloirs juste pour jeter un coup d'œil au Dr. "
+msgstr ""
+"Parfois, il peut même arriver que des groupes entiers de personnes se "
+"rassemblent dans nos couloirs juste pour jeter un coup d'œil au Dr. "
 "Docteur Docteur pour attraper un médecin."
 
 #: app/blueprints/multilingual/data_loader.py:227
@@ -280,9 +292,10 @@ msgstr "Madame Aide Aide au travail"
 
 #: app/blueprints/multilingual/data_loader.py:228
 msgid "Ms. Helferinnen Helferin at work text"
-msgstr "Le travail ici est varié et passionnant, en particulier lorsque le "
-"Dr. Docteur Docteur est de nouveau dans la pièce, alors presque personne "
-"ne peut leur tenir la main."
+msgstr ""
+"Le travail ici est varié et passionnant, en particulier lorsque le Dr. "
+"Docteur Docteur est de nouveau dans la pièce, alors presque personne ne "
+"peut leur tenir la main."
 
 #: app/blueprints/multilingual/data_loader.py:238
 msgid "a Dog person"
@@ -366,16 +379,37 @@ msgstr "Beaucoup de temps"
 msgid "Russian language"
 msgstr "Bon russe parlé"
 
+#: app/blueprints/multilingual/routes.py:112
+msgid "free"
+msgstr ""
+
+#: app/blueprints/multilingual/routes.py:120
+#: app/templates/appointment-slots.html:38
+#: app/templates/appointment-slots.html:64
+msgid "taken"
+msgstr ""
+
 #: app/blueprints/multilingual/templates/multilingual/appointment.html:2
 #: app/blueprints/multilingual/templates/multilingual/appointment.html:11
-#: app/templates/nav-bar.html:43
+#: app/templates/nav-bar.html:42
 msgid "Appointment"
 msgstr "Événements"
 
-#: app/blueprints/multilingual/templates/multilingual/appointment.html:109
+#: app/blueprints/multilingual/templates/multilingual/appointment.html:30
 msgid "Appointment-Warning"
-msgstr "Les rendez-vous ne peuvent être pris qu'en précisant le "
-"numéro d'assurance!"
+msgstr ""
+"Les rendez-vous ne peuvent être pris qu'en précisant le numéro "
+"d'assurance!"
+
+#: app/blueprints/multilingual/templates/multilingual/arrival.html:2
+#: app/templates/nav-bar.html:41
+msgid "Arrival"
+msgstr "Approcher"
+
+#: app/blueprints/multilingual/templates/multilingual/jobs.html:2
+#: app/templates/nav-bar.html:47
+msgid "Jobs"
+msgstr "Offres"
 
 #: app/blueprints/multilingual/templates/multilingual/jobs.html:19
 msgid "reinforcement"
@@ -383,8 +417,9 @@ msgstr "Nous cherchons à renforcer notre équipe dans les plus brefs délais,"
 
 #: app/blueprints/multilingual/templates/multilingual/jobs.html:24
 msgid "jobintro"
-msgstr "Nous sommes un hôpital très performant pour toutes sortes de "
-"maladies et pour les petits et les grands."
+msgstr ""
+"Nous sommes un hôpital très performant pour toutes sortes de maladies et "
+"pour les petits et les grands."
 
 #: app/blueprints/multilingual/templates/multilingual/jobs.html:27
 msgid "We have:"
@@ -396,8 +431,24 @@ msgstr "Votre profil:"
 
 #: app/blueprints/multilingual/templates/multilingual/jobs.html:41
 msgid "joboutro"
-msgstr "Si vous êtes intéressé, veuillez nous contacter, ou venez simplement "
-"nous rencontrer et connaître les locaux. Nous vous attendons avec impatience."
+msgstr ""
+"Si vous êtes intéressé, veuillez nous contacter, ou venez simplement nous"
+" rencontrer et connaître les locaux. Nous vous attendons avec impatience."
+
+#: app/blueprints/multilingual/templates/multilingual/location.html:2
+#: app/templates/nav-bar.html:32
+msgid "The Facility"
+msgstr "Tour"
+
+#: app/blueprints/multilingual/templates/multilingual/services.html:2
+#: app/templates/nav-bar.html:15
+msgid "Services"
+msgstr "Prestations de service"
+
+#: app/blueprints/multilingual/templates/multilingual/teampage.html:2
+#: app/templates/nav-bar.html:31
+msgid "Our Team"
+msgstr "Notre équipe"
 
 #: app/blueprints/multilingual/templates/multilingual/teampage.html:11
 msgid "Doctors"
@@ -407,69 +458,47 @@ msgstr "Les médecins"
 msgid "Medical Staff"
 msgstr "Le personnel médical"
 
-#: app/templates/nav-bar.html:11
+#: app/templates/nav-bar.html:10
 msgid "Mainpage"
 msgstr "Page d'accueil"
 
-#: app/templates/nav-bar.html:16
-msgid "Services"
-msgstr "Prestations de service"
-
-#: app/templates/nav-bar.html:19
+#: app/templates/nav-bar.html:18
 msgid "Chirotherapie"
 msgstr "Chiropratique"
 
-#: app/templates/nav-bar.html:20
+#: app/templates/nav-bar.html:19
 msgid "Check-up"
 msgstr "Check-up médical"
 
-#: app/templates/nav-bar.html:21
+#: app/templates/nav-bar.html:20
 msgid "Diagnostics"
 msgstr "Diagnostic"
 
-#: app/templates/nav-bar.html:22
+#: app/templates/nav-bar.html:21
 msgid "Misc"
 msgstr "Spécial"
 
-#: app/templates/nav-bar.html:23
+#: app/templates/nav-bar.html:22
 msgid "More"
 msgstr "Additionnel"
 
-#: app/templates/nav-bar.html:29
+#: app/templates/nav-bar.html:28
 msgid "Who we are"
 msgstr "Nous"
 
-#: app/templates/nav-bar.html:32
-msgid "Our Team"
-msgstr "Notre équipe"
-
-#: app/templates/nav-bar.html:33
-msgid "The Facility"
-msgstr "Tour"
-
-#: app/templates/nav-bar.html:39
+#: app/templates/nav-bar.html:38
 msgid "Contact"
 msgstr "Contacter"
 
-#: app/templates/nav-bar.html:42
-msgid "Arrival"
-msgstr "Approcher"
-
-#: app/templates/nav-bar.html:48
-msgid "Jobs"
-msgstr "Offres"
-
-#: app/templates/nav-bar.html:55
+#: app/templates/nav-bar.html:54
 msgid "gb"
 msgstr "fr"
 
-#: app/templates/nav-bar.html:55
+#: app/templates/nav-bar.html:54
 msgid "Language"
 msgstr "Langue"
 
-#: app/templates/nav-bar.html:71
+#: app/templates/nav-bar.html:70
 msgid "Search"
 msgstr "Chercher"
-
-
 

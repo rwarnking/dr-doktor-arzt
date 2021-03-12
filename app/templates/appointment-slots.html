@@ -24,18 +24,18 @@
   </div>
 </div>
 
-<div class="card-body bg-dark">
+<div class="card-body p-bg p-text">
   {% for val in range(slots) %}
     <div class="row">
 
       <div class="col" style="padding: 0">
-        <p class="btn-lg bg-dark text-white w-100" style="margin: 0px; border: 1px solid transparent;">
+        <p class="btn-lg w-100" style="margin: 0px; border: 1px solid transparent;">
           {{ day_slots[loop.index0][time] }}
         </p>
       </div>
 
       <div class="col p-0">
-        {% if day_slots[loop.index0][state] == "Taken" %}
+        {% if day_slots[loop.index0][state] == gettext("taken") %}
         <button disabled type="button" class="btn btn-lg w-100 btn-border-only timeslot time-taken">
           {{ day_slots[loop.index0][state] }}
         </button>
@@ -53,7 +53,7 @@
 
       <div class="col" style="padding: 0">
         {% if (val + 1) * 2 <= day_slots|length %}
-        <p class="btn-lg bg-dark text-white w-100" style="margin: 0px; border: 1px solid transparent;">
+        <p class="btn-lg w-100" style="margin: 0px; border: 1px solid transparent;">
           {{ day_slots[loop.index0 + slots][time] }}
         </p>
         {% endif %}
@@ -61,7 +61,7 @@
 
       <div class="col" style="padding: 0">
         {% if (val + 1) * 2 <= day_slots|length %}
-          {% if day_slots[loop.index0 + slots][state] == "Taken" %}
+          {% if day_slots[loop.index0 + slots][state] == gettext("taken") %}
           <button disabled type="button" class="btn btn-lg w-100 btn-border-only timeslot time-taken">
             {{ day_slots[loop.index0 + slots][state] }}
           </button>

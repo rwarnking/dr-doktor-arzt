@@ -109,14 +109,15 @@ def insert_db(query, args=()):
     cur.commit()
 
 def get_day_slots(day_today):
+    free_text = gettext(u"free")
     day_slots = [
-        ["9:30", "Free"], ["10:00", "Free"], ["10:30", "Free"], ["11:00", "Free"],
-        ["11:30", "Free"], ["12:00", "Free"], ["12:30", "Free"], ["15:00", "Free"],
-        ["15:30", "Free"], ["16:00", "Free"], ["16:30", "Free"], ["17:00", "Free"],
+        ["9:30", free_text], ["10:00", free_text], ["10:30", free_text], ["11:00", free_text],
+        ["11:30", free_text], ["12:00", free_text], ["12:30", free_text], ["15:00", free_text],
+        ["15:30", free_text], ["16:00", free_text], ["16:30", free_text], ["17:00", free_text],
     ]
 
     for appointment in query_db('select * from appointments where year=? and month=? and day=?', (day_today.year, day_today.month, day_today.day)):
-        day_slots[appointment["slot"]][1] = "Taken"
+        day_slots[appointment["slot"]][1] = gettext(u"taken")
 
     return day_slots
 

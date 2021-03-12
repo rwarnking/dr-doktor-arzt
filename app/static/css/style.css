@@ -1,10 +1,48 @@
+
 :root {
-    --bg-color: #212529;
-    --font-color: white;
+    --bg-color-1: #212529;
+    --bg-color-2: lightgray;
+    --bg-color-trans: rgba(255, 255, 255, 0.85);
+    --font-color-1: #fff;
+    --font-color-2: #212529;
     --success-color: #198754;
     --failure-color: #dc3545;
     --primary-color: #212529;
     --secondary-color: #6c757d;
+}
+
+
+/*
+:root {
+    --bg-color-1: #f1f1f1;
+    --bg-color-2: #212529;
+    --bg-color-trans: rgba(33, 37, 41, 0.85);
+    --font-color-1: #212529;
+    --font-color-2: #ffffff;
+    --success-color: #198754;
+    --failure-color: #dc3545;
+    --primary-color: #212529;
+    --secondary-color: #6c757d;
+}
+*/
+
+/**************************************************************************************************
+ * All
+ */
+.p-bg {
+    background-color: var(--bg-color-1);
+}
+
+.trans-bg {
+    background-color: var(--bg-color-trans);
+}
+
+.p-text {
+    color: var(--font-color-1);
+}
+
+.s-text {
+    color: var(--font-color-2);
 }
 
 /**************************************************************************************************
@@ -40,10 +78,10 @@ hr.line-lr, hr.line-rl {
     margin: 1.5vh;
 }
 .line-lr {
-    background: linear-gradient(45deg, lightgray, transparent);
+    background: linear-gradient(45deg, var(--bg-color-2), transparent);
 }
 .line-rl {
-    background: linear-gradient(225deg, lightgray, transparent);
+    background: linear-gradient(225deg, var(--bg-color-2), transparent);
 }
 
 .linediv {
@@ -147,16 +185,16 @@ IMG.displayed {
 /**************************************************************************************************
  * Appointmentbuttons
  */
- .btn-border-only {
-    color: var(--font-color);
-    background-color: var(--bg-color);
-    border-color: var(--bg-color);
+.btn-border-only {
+    color: var(--font-color-1);
+    background-color: var(--bg-color-1);
+    border-color: var(--bg-color-1);
     border-width: 2px;
     border-style: outset;
 }
 .btn-border-only:hover, .btn-border-only:focus, .btn-border-only:active, .btn-border-only.active, .open>.dropdown-toggle.btn-border-only {
-    color: var(--font-color);
-    border-color: var(--font-color);
+    color: var(--font-color-1);
+    border-color: var(--font-color-1);
 }
 .btn-border-only-today {
     color: var(--font-color);
@@ -173,8 +211,8 @@ IMG.displayed {
     background-color: var(--success-color);
 }
 .selected-day {
-    background-color: lightgray;
-    color: var(--bg-color);
+    background-color: var(--bg-color-2);
+    color: var(--font-color-2)!important;
 }
 
 .date-prev,
