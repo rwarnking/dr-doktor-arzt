@@ -1,3 +1,12 @@
+:root {
+    --bg-color: #212529;
+    --font-color: white;
+    --success-color: #198754;
+    --failure-color: #dc3545;
+    --primary-color: #212529;
+    --secondary-color: #6c757d;
+}
+
 /**************************************************************************************************
  * Header
  */
@@ -138,34 +147,34 @@ IMG.displayed {
 /**************************************************************************************************
  * Appointmentbuttons
  */
-.btn-border-only {
-    color: #fff;
-    background-color: #212529;
-    border-color: #212529;
+ .btn-border-only {
+    color: var(--font-color);
+    background-color: var(--bg-color);
+    border-color: var(--bg-color);
     border-width: 2px;
     border-style: outset;
 }
 .btn-border-only:hover, .btn-border-only:focus, .btn-border-only:active, .btn-border-only.active, .open>.dropdown-toggle.btn-border-only {
-    color: #fff;
-    border-color: #fff;
+    color: var(--font-color);
+    border-color: var(--font-color);
 }
 .btn-border-only-today {
-    color: #fff;
-    background-color: #6c757d;
-    border-color: #6c757d;
+    color: var(--font-color);
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
     border-width: 2px;
     border-style: outset;
 }
 
 .time-taken {
-    background-color: #dc3545;
+    background-color: var(--failure-color);
 }
 .time-free {
-    background-color: #28a745;
+    background-color: var(--success-color);
 }
 .selected-day {
     background-color: lightgray;
-    color: #212529;
+    color: var(--bg-color);
 }
 
 .date-prev,
