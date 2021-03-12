@@ -120,8 +120,15 @@ def get_day_slots(day_today):
 
     return day_slots
 
-def set_date_slot(date, slot):
-    insert_db("INSERT INTO appointments (year, month, day, slot) VALUES (?, ?, ?, ?)", (date.year, date.month, date.day, slot))
+def set_date_slot(date, slot, person_id):
+    insert_db("INSERT INTO appointments (year, month, day, slot, p_id) VALUES (?, ?, ?, ?, ?)", (date.year, date.month, date.day, slot, person_id))
+
+def does_person_exist(fname, lname, id):
+    res = query_db('select * from persons where firstname=? and lastname=? and insuranceID=?', (fname, lname, id))
+    if len(res) == 1:
+        return res[0]["id"]
+    else:
+        return -1
 
 
 @multilingual.route('/termine', defaults={'lang_code': 'de'})
@@ -138,20 +145,42 @@ def appointment():
         "year" : day_today.year,
     }
 
-    # app.logger.warning(day_today)
-
     return render_template('multilingual/appointment.html', languages=current_app.config['LANGUAGE_DATA'], day_slots=day_slots, s_date=selected_date, today=today)
 
 
-@multilingual.route('/appointment/<int:year>/<int:month>/<int:day>/<int:slot>', methods=['POST'])
-def make_appointment(year, month, day, slot):
+#@multilingual.route('/appointment/<int:year>/<int:month>/<int:day>/<int:slot>', methods=['POST'])
+@multilingual.route('/appointment/register', methods=['POST'])
+def make_appointment():
+    data = request.get_json()
+
+    year = data["year"]
+    month = data["month"]
+    day = data["day"]
+    slot = data["slot"]
 
     selected_day = date(year, month, day)
     selected_date = get_selected_date(selected_day)
 
     SLOT_COUNT = 12
+    p_firstname = data["firstName"]
+    p_lastname = data["lastName"]
+    insurance_id = data["insuranceID"]
+
+    success = False
+
     if slot > -1 and slot < SLOT_COUNT:
-        set_date_slot(selected_day, slot)
+        p_id = does_person_exist(p_firstname, p_lastname, insurance_id)
+        if p_id > -1:
+            set_date_slot(selected_day, slot, p_id)
+            row_id = dict(query_db('SELECT last_insert_rowid()')[0])["last_insert_rowid()"] - 1
+            success = True
+            if row_id > -1:
+                row = query_db('SELECT * FROM appointments')[row_id]
+                app.logger.warning(dict(row))
+
+    if success is False:
+        return 'You provided invalid information', 401
+
     day_slots = get_day_slots(selected_day)
 
     return render_template('appointment-slots.html', languages=current_app.config['LANGUAGE_DATA'], day_slots=day_slots, s_date=selected_date)

@@ -32,4 +32,37 @@
 
 </div>
 
+<!-- Modal -->
+<div class="modal fade" id="appointmentModal" tabindex="-1" aria-labelledby="appointmentModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="appointmentModalLabel">Please confirm appointment</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-start">
+        <h5 id="appointmentText">hi</h5>
+        <div class="form-signin">
+          <form id="appointmentForm" action="#">
+            <label class="form-label" for="firstName">First name</label>
+            <input type="text" id="firstName" class="form-control" required>
+
+            <label class="form-label" for="lastName">Last name</label>
+            <input type="text" id="lastName" class="form-control" required>
+
+            <label class="form-label" for="insuranceID">Health insurance ID</label>
+            <input type="text" id="insuranceID" class="form-control" required>
+
+            <hr>
+
+            <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Abort</button>
+            <button class="btn btn-success" type="submit" id="appointmentSubmit">Submit</button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
 {% endblock %}

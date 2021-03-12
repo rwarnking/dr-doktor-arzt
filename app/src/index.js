@@ -1,23 +1,50 @@
 import $ from 'cash-dom'
 import axios from 'axios'
 
+
 window.addEventListener('DOMContentLoaded', () => {
 
-    // book a specific time slot
-    $('#appointment-hours').on('click', '.timeslot.time-free', async function() {
+    document.querySelector('#appointmentModal').addEventListener('show.bs.modal', function(event) {
+        const button = event.relatedTarget;
+        let t = $('#appointmentText');
+        t.text(button.getAttribute('data-complete'));
+        t.data("slot", button.getAttribute('data-slot'));
+    })
 
-        const e = $(this);
+    // book a specific time slot
+    $('#appointmentForm').on('submit', async function(event) {
+
+        event.preventDefault();
+
+        const t = $('#appointmentText');
         const s = $('.selected-day');
 
-        const hours_html = await axios.post(`/en/appointment/${s.data('year')}/${s.data('month')}/${s.data('day')}/${e.data('slot')}`)
-            .catch(() => alert("invalid request"))
+        const slot = Number.parseInt(t.data('slot'));
+        const fname = $('#firstName').val();
+        const lname = $('#lastName').val();
+        const id = $('#insuranceID').val();
+        const requestData = {
+            slot: slot,
+            day: Number.parseInt(s.data('day')),
+            month: Number.parseInt(s.data('month')),
+            year: Number.parseInt(s.data('year')),
+            firstName: fname,
+            lastName: lname,
+            insuranceID: id
+        };
+
+        const hours_html = await axios.post(`/en/appointment/register`, requestData)
+            .catch((error) => {
+                alert(error.response ? error.response.data : 'An error occured');
+                return false;
+            })
             .then(response => response.data)
 
         if (hours_html) {
+            $('#appointmentForm button[data-bs-dismiss]').trigger('click');
             $('#appointment-hours').html(hours_html);
         }
     });
-
 
     // load all appointment slots for one day
     $('#appointment-days').on('click', '.dayslot', async function() {

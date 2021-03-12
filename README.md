@@ -18,6 +18,10 @@ bootstrap
     - https://medium.com/@nicolas_84494/flask-create-a-multilingual-web-application-with-language-specific-urls-5d994344f5fd
 - Bootstrap
     - https://getbootstrap.com/docs/5.0/examples/
+    - model
+        - https://getbootstrap.com/docs/5.0/components/modal/#how-it-works
+    - colors
+        - https://getbootstrap.com/docs/5.0/customize/color/
 - Webpack
     - https://pypi.org/project/Flask-Webpack/
     - https://medium.com/@sofiaroc.pt/integrating-webpack-4-with-a-backend-framework-4a0e630d2a03
@@ -28,6 +32,7 @@ bootstrap
 - Leaflet
     - https://leafletjs.com/examples/quick-start/
 - cash (cash-dom)
+    - https://github.com/fabiospampinato/cash#fntext-
 - axios
 
 # Usefull commands

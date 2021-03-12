@@ -27,23 +27,30 @@
 <div class="card-body bg-dark">
   {% for val in range(slots) %}
     <div class="row">
+
       <div class="col" style="padding: 0">
         <p class="btn-lg bg-dark text-white w-100" style="margin: 0px; border: 1px solid transparent;">
           {{ day_slots[loop.index0][time] }}
         </p>
-
       </div>
+
       <div class="col p-0">
         {% if day_slots[loop.index0][state] == "Taken" %}
         <button disabled type="button" class="btn btn-lg w-100 btn-border-only timeslot time-taken">
           {{ day_slots[loop.index0][state] }}
         </button>
         {% else %}
-        <button type="button" class="btn btn-lg w-100 btn-border-only timeslot time-free" data-slot="{{ loop.index0 }}">
+        <!-- <button type="button" class="btn btn-lg w-100 btn-border-only timeslot time-free" data-slot="{{ loop.index0 }}"> -->
+        <button type="button" class="btn btn-lg w-100 btn-border-only timeslot time-free"
+          data-bs-toggle="modal"
+          data-bs-target="#appointmentModal"
+          data-slot="{{ loop.index0 }}"
+          data-complete="{{ s_date.complete }}, {{ day_slots[loop.index0][time] }}">
           {{ day_slots[loop.index0][state] }}
         </button>
         {% endif %}
       </div>
+
       <div class="col" style="padding: 0">
         {% if (val + 1) * 2 <= day_slots|length %}
         <p class="btn-lg bg-dark text-white w-100" style="margin: 0px; border: 1px solid transparent;">
@@ -51,6 +58,7 @@
         </p>
         {% endif %}
       </div>
+
       <div class="col" style="padding: 0">
         {% if (val + 1) * 2 <= day_slots|length %}
           {% if day_slots[loop.index0 + slots][state] == "Taken" %}
@@ -58,12 +66,18 @@
             {{ day_slots[loop.index0 + slots][state] }}
           </button>
           {% else %}
-          <button type="button" class="btn btn-lg w-100 btn-border-only timeslot time-free" data-slot="{{ loop.index0 + slots }}">
+          <!-- <button type="button" class="btn btn-lg w-100 btn-border-only timeslot time-free" data-slot="{{ loop.index0 + slots }}"> -->
+          <button type="button" class="btn btn-lg w-100 btn-border-only timeslot time-free"
+            data-bs-toggle="modal"
+            data-bs-target="#appointmentModal"
+            data-slot="{{ loop.index0 + slots }}"
+            data-complete="{{ s_date.complete }}, {{ day_slots[loop.index0 + slots][time] }}">
             {{ day_slots[loop.index0 + slots][state] }}
           </button>
           {% endif %}
         {% endif %}
       </div>
+
     </div>
   {% endfor %}
 </div>
