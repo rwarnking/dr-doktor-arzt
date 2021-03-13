@@ -7,46 +7,38 @@
 
 {% block main %}
 
-<div class="container marketing mt-4">
+<div class="container job-container">
 
-  {% for val in range((job_list|length / 2)|round(method="ceil")|int) %}
-    <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
+    {% for job_offer in job_list %}
+      <div class="bg-light m-1 pt-3 pt-md-5 px-3 text-center overflow-hidden job-offer">
+        <div class="my-3 py-3">
+          <p class="lead"> {{ gettext("reinforcement") }} </p>
+          <h2 class="display-6">
+            {{ job_offer.titel }}
+          </h2>
+          <p class="lead" style="text-align: left;">
+            {{ gettext("jobintro") }}
+          </p>
 
-      {% for val2 in range(val * 2, (val + 1) * 2) %}
-        {% if val2 < job_list|length %}
-          <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden w-50">
-            <div class="my-3 py-3">
-              <p class="lead"> {{ gettext("reinforcement") }} </p>
-              <h2 class="display-6">
-                {{ job_list[val2].titel }}
-              </h2>
-              <p class="lead" style="text-align: left;">
-                {{ gettext("jobintro") }}
-              </p>
+          <p class="lead" style="text-align: left;"> {{ gettext("We have:") }} </p>
+          <ul style="text-align: left;">
+            {% for item in job_offer.offer %}
+              <li>{{ item }}</li>
+            {% endfor %}
+          </ul>
+          <p class="lead" style="text-align: left;"> {{ gettext("You have:") }} </p>
+          <ul style="text-align: left;">
+            {% for item in job_offer.profile %}
+              <li>{{ item }}</li>
+            {% endfor %}
+          </ul>
 
-              <p class="lead" style="text-align: left;"> {{ gettext("We have:") }} </p>
-              <ul style="text-align: left;">
-                {% for item in job_list[val2].offer %}
-                  <li>{{ item }}</li>
-                {% endfor %}
-              </ul>
-              <p class="lead" style="text-align: left;"> {{ gettext("You have:") }} </p>
-              <ul style="text-align: left;">
-                {% for item in job_list[val2].profile %}
-                  <li>{{ item }}</li>
-                {% endfor %}
-              </ul>
-
-              <p class="lead" style="text-align: left;">
-                {{ gettext("joboutro") }}
-              </p>
-            </div>
-          </div>
-        {% endif %}
-      {% endfor %}
-
-    </div>
-  {% endfor %}
+          <p class="lead" style="text-align: left;">
+            {{ gettext("joboutro") }}
+          </p>
+        </div>
+      </div>
+    {% endfor %}
 
 </div>
 

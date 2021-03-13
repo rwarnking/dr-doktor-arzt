@@ -1,15 +1,21 @@
 import $ from 'cash-dom'
 import axios from 'axios'
 
+function lang() {
+    return window.location.pathname.slice(1, 3);
+}
 
 window.addEventListener('DOMContentLoaded', () => {
 
-    document.querySelector('#appointmentModal').addEventListener('show.bs.modal', function(event) {
-        const button = event.relatedTarget;
-        let t = $('#appointmentText');
-        t.text(button.getAttribute('data-complete'));
-        t.data("slot", button.getAttribute('data-slot'));
-    })
+    if ($('#appointmentModal').length > 0) {
+
+        document.querySelector('#appointmentModal').addEventListener('show.bs.modal', function(event) {
+            const button = event.relatedTarget;
+            let t = $('#appointmentText');
+            t.text(button.getAttribute('data-complete'));
+            t.data("slot", button.getAttribute('data-slot'));
+        });
+    }
 
     // book a specific time slot
     $('#appointmentForm').on('submit', async function(event) {
@@ -33,7 +39,7 @@ window.addEventListener('DOMContentLoaded', () => {
             insuranceID: id
         };
 
-        const hours_html = await axios.post(`/en/appointment/register`, requestData)
+        const hours_html = await axios.post(`/${lang()}/appointment/register`, requestData)
             .catch((error) => {
                 alert(error.response ? error.response.data : 'An error occured');
                 return false;
@@ -55,7 +61,7 @@ window.addEventListener('DOMContentLoaded', () => {
         // select day
         e.addClass('selected-day');
 
-        const hours_html = await axios.get(`/en/appointment/${e.data('year')}/${e.data('month')}/${e.data('day')}`)
+        const hours_html = await axios.get(`/${lang()}/appointment/${e.data('year')}/${e.data('month')}/${e.data('day')}`)
             .catch(() => alert("invalid request"))
             .then(response => response.data)
 
@@ -70,7 +76,7 @@ window.addEventListener('DOMContentLoaded', () => {
         const e = $(this);
         const prev = e.data('day');
 
-        const hours_html = await axios.get(`/en/appointment/${e.data('year')}/${e.data('month')}/${prev}`)
+        const hours_html = await axios.get(`/${lang()}/appointment/${e.data('year')}/${e.data('month')}/${prev}`)
             .catch(() => alert("invalid request"))
             .then(response => response.data)
 
@@ -86,7 +92,7 @@ window.addEventListener('DOMContentLoaded', () => {
         const e = $(this);
         const next = e.data('day');
 
-        const hours_html = await axios.get(`/en/appointment/${e.data('year')}/${e.data('month')}/${next}`)
+        const hours_html = await axios.get(`/${lang()}/appointment/${e.data('year')}/${e.data('month')}/${next}`)
             .catch(() => alert("invalid request"))
             .then(response => response.data)
 
@@ -101,7 +107,7 @@ window.addEventListener('DOMContentLoaded', () => {
     $('#appointment-days').on('click', '.date-prev', async function() {
         const e = $(this);
 
-        const days_html = await axios.get(`/en/appointment/${e.data('year')}/${e.data('month')}`)
+        const days_html = await axios.get(`/${lang()}/appointment/${e.data('year')}/${e.data('month')}`)
             .catch(() => alert("invalid request"))
             .then(response => response.data)
 
@@ -109,7 +115,7 @@ window.addEventListener('DOMContentLoaded', () => {
             $('#appointment-days').html(days_html);
         }
 
-        const hours_html = await axios.get(`/en/appointment/${e.data('year')}/${e.data('month')}/1`)
+        const hours_html = await axios.get(`/${lang()}/appointment/${e.data('year')}/${e.data('month')}/1`)
             .catch(() => alert("invalid request"))
             .then(response => response.data)
 
@@ -122,7 +128,7 @@ window.addEventListener('DOMContentLoaded', () => {
     $('#appointment-days').on('click', '.date-next', async function() {
         const e = $(this);
 
-        const days_html = await axios.get(`/en/appointment/${e.data('year')}/${e.data('month')}`)
+        const days_html = await axios.get(`/${lang()}/appointment/${e.data('year')}/${e.data('month')}`)
             .catch(() => alert("invalid request"))
             .then(response => response.data)
 
@@ -130,7 +136,7 @@ window.addEventListener('DOMContentLoaded', () => {
             $('#appointment-days').html(days_html);
         }
 
-        const hours_html = await axios.get(`/en/appointment/${e.data('year')}/${e.data('month')}/1`)
+        const hours_html = await axios.get(`/${lang()}/appointment/${e.data('year')}/${e.data('month')}/1`)
             .catch(() => alert("invalid request"))
             .then(response => response.data)
 

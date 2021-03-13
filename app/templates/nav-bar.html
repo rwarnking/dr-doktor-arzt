@@ -1,8 +1,18 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light" style="height: 5vh; padding: 0">
+<nav class="navbar navbar-expand-lg navbar-light" style="height: 5vh; padding: 0">
   <div class="container-fluid p-0">
+
+    <button class="navbar-toggler" type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <a class="navbar-brand" href="{{ url_for('multilingual.startpage') }}">
+        <a class="navbar-brand hd-only" href="{{ url_for('multilingual.startpage') }}">
           <img src="{{ static_url_for('static', filename='img/logo.svg') }}" alt="img/logo.svg" style="height: 3vh; width: 3vh">
         </a>
 
@@ -48,7 +58,9 @@
         </li>
 
       </ul>
+    </div>
 
+    <div id="nav-lang-search">
       <div id="lang-container" class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navLangDrop" role="button" data-bs-toggle="dropdown" aria-expanded="false">
           <span class="flag-icon flag-icon-{{ gettext("gb") }}"> </span> {{ gettext("Language") }}
@@ -70,5 +82,6 @@
         <button class="btn btn-outline-success" type="submit">{{ gettext("Search") }}</button>
       </form>
     </div>
+
   </div>
 </nav>

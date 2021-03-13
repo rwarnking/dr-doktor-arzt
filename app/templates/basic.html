@@ -20,8 +20,10 @@
         {% include 'nav-bar.html' with context %}
         {% include 'header.html' with context %}
 
-        {% block main %}
-        {% endblock %}
+        <section>
+            {% block main %}
+            {% endblock %}
+        </section>
 
         {% include 'footer.html' with context %}
 

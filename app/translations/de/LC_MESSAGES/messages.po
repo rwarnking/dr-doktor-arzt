@@ -41,7 +41,7 @@ msgstr "COVID 19"
 #: app/blueprints/multilingual/data_loader.py:23
 msgid "Main - Corona text"
 msgstr ""
-"COVID 19Eines Tages wird es vorbei sein und bis dahin sollten Sie sich "
+"Eines Tages wird es vorbei sein und bis dahin sollten Sie sich "
 "bei uns Impfen lassen."
 
 #: app/blueprints/multilingual/data_loader.py:32
