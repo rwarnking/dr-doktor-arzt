@@ -199,15 +199,15 @@ def appointment_slots(year, month, day):
 @multilingual.route('/appointment/<int:year>/<int:month>')
 def appointment_days(year, month):
 
-    selected_day = date(year, month, 1)
-    selected_date = get_selected_date(selected_day)
-
     day_today = datetime.today()
     today = {
         "day_idx" : day_today.day,
         "month_idx" : day_today.month,
         "year" : day_today.year,
     }
+
+    selected_day = date(year, month, day_today.day if month == day_today.month else 1)
+    selected_date = get_selected_date(selected_day)
 
     return render_template('multilingual/appointment-days.html', languages=current_app.config['LANGUAGE_DATA'], s_date=selected_date, today=today)
 

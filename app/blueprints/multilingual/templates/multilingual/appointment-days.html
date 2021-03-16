@@ -2,7 +2,9 @@
 <div class="card-header">
   <div class="row">
     <div class="col">
-      <button class="carousel-control-prev-icon m-0 date-prev"
+      <button
+        {{ 'disabled' if s_date.month_idx == today.month_idx else '' }}
+        class="carousel-control-prev-icon m-0 date-prev"
         data-year="{{ s_date.year }}"
         data-month="{{ s_date.month_idx - 1 }}">
       </button>
@@ -58,10 +60,19 @@
             data-day="{{ col1o }}">
             {{ col1o }}
           </button>
-          {% elif is_today %}
+          {% elif col1o == s_date.day_idx %}
           <button
             type="button"
             class="btn btn-lg w-100 btn-border-only-today dayslot selected-day {{ 's_date.day_idx' if s_date.day_idx == col1 else '' }}"
+            data-year="{{ s_date.year }}"
+            data-month="{{ s_date.month_idx }}"
+            data-day="{{ col1o }}">
+            {{ col1o }}
+          </button>
+          {% elif is_today %}
+          <button
+            type="button"
+            class="btn btn-lg w-100 btn-border-only-today dayslot {{ 's_date.day_idx' if s_date.day_idx == col1 else '' }}"
             data-year="{{ s_date.year }}"
             data-month="{{ s_date.month_idx }}"
             data-day="{{ col1o }}">
