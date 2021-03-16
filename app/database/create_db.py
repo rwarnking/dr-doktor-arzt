@@ -1,6 +1,6 @@
 import sqlite3
 
-conn = sqlite3.connect('database.db')
+conn = sqlite3.connect('app/database/database.db')
 print("Opened database successfully");
 
 conn.execute("DROP TABLE IF EXISTS appointments")

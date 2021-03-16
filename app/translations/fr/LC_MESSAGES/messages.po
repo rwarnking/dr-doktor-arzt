@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-03-12 17:15+0100\n"
+"POT-Creation-Date: 2021-03-16 13:25+0100\n"
 "PO-Revision-Date: 2021-02-28 18:01+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: fr\n"
@@ -43,7 +43,7 @@ msgid "Main - Corona text"
 msgstr "Un jour, ce sera fini et d'ici là, vous devriez être vacciné avec nous."
 
 #: app/blueprints/multilingual/data_loader.py:32
-#: app/blueprints/multilingual/data_loader.py:36 app/templates/nav-bar.html:18
+#: app/blueprints/multilingual/data_loader.py:36 app/templates/nav-bar.html:28
 msgid "chirotherapy"
 msgstr "La Chirothérapie"
 
@@ -51,7 +51,7 @@ msgstr "La Chirothérapie"
 msgid "chirotherapy desc"
 msgstr "C'est magique!"
 
-#: app/blueprints/multilingual/data_loader.py:42 app/templates/nav-bar.html:19
+#: app/blueprints/multilingual/data_loader.py:42 app/templates/nav-bar.html:29
 msgid "checkups"
 msgstr "Check-up médical"
 
@@ -87,7 +87,7 @@ msgstr "Les vaccinations"
 msgid "vaccine desc"
 msgstr "Important"
 
-#: app/blueprints/multilingual/data_loader.py:76 app/templates/nav-bar.html:20
+#: app/blueprints/multilingual/data_loader.py:76 app/templates/nav-bar.html:30
 msgid "diagnostic"
 msgstr "Diagnostic"
 
@@ -131,7 +131,7 @@ msgstr "Mesure de la densité osseuse"
 msgid "bone-density-measurement desc"
 msgstr "Aie"
 
-#: app/blueprints/multilingual/data_loader.py:118 app/templates/nav-bar.html:21
+#: app/blueprints/multilingual/data_loader.py:118 app/templates/nav-bar.html:31
 msgid "misc"
 msgstr "Spécial"
 
@@ -143,7 +143,7 @@ msgstr "Conseils nutritionnels"
 msgid "foodadvice desc"
 msgstr "Nomnomnom"
 
-#: app/blueprints/multilingual/data_loader.py:128 app/templates/nav-bar.html:22
+#: app/blueprints/multilingual/data_loader.py:128 app/templates/nav-bar.html:32
 msgid "more"
 msgstr "Autres"
 
@@ -391,7 +391,7 @@ msgstr ""
 
 #: app/blueprints/multilingual/templates/multilingual/appointment.html:2
 #: app/blueprints/multilingual/templates/multilingual/appointment.html:11
-#: app/templates/nav-bar.html:42
+#: app/templates/nav-bar.html:52
 msgid "Appointment"
 msgstr "Événements"
 
@@ -402,51 +402,51 @@ msgstr ""
 "d'assurance!"
 
 #: app/blueprints/multilingual/templates/multilingual/arrival.html:2
-#: app/templates/nav-bar.html:41
+#: app/templates/nav-bar.html:51
 msgid "Arrival"
 msgstr "Approcher"
 
 #: app/blueprints/multilingual/templates/multilingual/jobs.html:2
-#: app/templates/nav-bar.html:47
+#: app/templates/nav-bar.html:57
 msgid "Jobs"
 msgstr "Offres"
 
-#: app/blueprints/multilingual/templates/multilingual/jobs.html:19
+#: app/blueprints/multilingual/templates/multilingual/jobs.html:15
 msgid "reinforcement"
 msgstr "Nous cherchons à renforcer notre équipe dans les plus brefs délais,"
 
-#: app/blueprints/multilingual/templates/multilingual/jobs.html:24
+#: app/blueprints/multilingual/templates/multilingual/jobs.html:20
 msgid "jobintro"
 msgstr ""
 "Nous sommes un hôpital très performant pour toutes sortes de maladies et "
 "pour les petits et les grands."
 
-#: app/blueprints/multilingual/templates/multilingual/jobs.html:27
+#: app/blueprints/multilingual/templates/multilingual/jobs.html:23
 msgid "We have:"
 msgstr "Nous offrons:"
 
-#: app/blueprints/multilingual/templates/multilingual/jobs.html:33
+#: app/blueprints/multilingual/templates/multilingual/jobs.html:29
 msgid "You have:"
 msgstr "Votre profil:"
 
-#: app/blueprints/multilingual/templates/multilingual/jobs.html:41
+#: app/blueprints/multilingual/templates/multilingual/jobs.html:37
 msgid "joboutro"
 msgstr ""
 "Si vous êtes intéressé, veuillez nous contacter, ou venez simplement nous"
 " rencontrer et connaître les locaux. Nous vous attendons avec impatience."
 
 #: app/blueprints/multilingual/templates/multilingual/location.html:2
-#: app/templates/nav-bar.html:32
+#: app/templates/nav-bar.html:42
 msgid "The Facility"
 msgstr "Tour"
 
 #: app/blueprints/multilingual/templates/multilingual/services.html:2
-#: app/templates/nav-bar.html:15
+#: app/templates/nav-bar.html:25
 msgid "Services"
 msgstr "Prestations de service"
 
 #: app/blueprints/multilingual/templates/multilingual/teampage.html:2
-#: app/templates/nav-bar.html:31
+#: app/templates/nav-bar.html:41
 msgid "Our Team"
 msgstr "Notre équipe"
 
@@ -458,47 +458,47 @@ msgstr "Les médecins"
 msgid "Medical Staff"
 msgstr "Le personnel médical"
 
-#: app/templates/nav-bar.html:10
+#: app/templates/nav-bar.html:20
 msgid "Mainpage"
 msgstr "Page d'accueil"
 
-#: app/templates/nav-bar.html:18
+#: app/templates/nav-bar.html:28
 msgid "Chirotherapie"
 msgstr "Chiropratique"
 
-#: app/templates/nav-bar.html:19
+#: app/templates/nav-bar.html:29
 msgid "Check-up"
 msgstr "Check-up médical"
 
-#: app/templates/nav-bar.html:20
+#: app/templates/nav-bar.html:30
 msgid "Diagnostics"
 msgstr "Diagnostic"
 
-#: app/templates/nav-bar.html:21
+#: app/templates/nav-bar.html:31
 msgid "Misc"
 msgstr "Spécial"
 
-#: app/templates/nav-bar.html:22
+#: app/templates/nav-bar.html:32
 msgid "More"
 msgstr "Additionnel"
 
-#: app/templates/nav-bar.html:28
+#: app/templates/nav-bar.html:38
 msgid "Who we are"
 msgstr "Nous"
 
-#: app/templates/nav-bar.html:38
+#: app/templates/nav-bar.html:48
 msgid "Contact"
 msgstr "Contacter"
 
-#: app/templates/nav-bar.html:54
+#: app/templates/nav-bar.html:66
 msgid "gb"
 msgstr "fr"
 
-#: app/templates/nav-bar.html:54
+#: app/templates/nav-bar.html:66
 msgid "Language"
 msgstr "Langue"
 
-#: app/templates/nav-bar.html:70
+#: app/templates/nav-bar.html:82
 msgid "Search"
 msgstr "Chercher"
 

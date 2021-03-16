@@ -82,7 +82,7 @@ def arrival():
 
 
 
-DATABASE = 'database.db'
+DATABASE = 'app/database/database.db'
 
 def get_db():
     db = getattr(g, '_database', None)
@@ -149,7 +149,6 @@ def appointment():
     return render_template('multilingual/appointment.html', languages=current_app.config['LANGUAGE_DATA'], day_slots=day_slots, s_date=selected_date, today=today)
 
 
-#@multilingual.route('/appointment/<int:year>/<int:month>/<int:day>/<int:slot>', methods=['POST'])
 @multilingual.route('/appointment/register', methods=['POST'])
 def make_appointment():
     data = request.get_json()
@@ -184,7 +183,7 @@ def make_appointment():
 
     day_slots = get_day_slots(selected_day)
 
-    return render_template('appointment-slots.html', languages=current_app.config['LANGUAGE_DATA'], day_slots=day_slots, s_date=selected_date)
+    return render_template('multilingual/appointment-slots.html', languages=current_app.config['LANGUAGE_DATA'], day_slots=day_slots, s_date=selected_date)
 
 
 @multilingual.route('/appointment/<int:year>/<int:month>/<int:day>')
@@ -194,7 +193,7 @@ def appointment_slots(year, month, day):
 
     day_slots = get_day_slots(selected_day)
 
-    return render_template('appointment-slots.html', languages=current_app.config['LANGUAGE_DATA'], day_slots=day_slots, s_date=selected_date)
+    return render_template('multilingual/appointment-slots.html', languages=current_app.config['LANGUAGE_DATA'], day_slots=day_slots, s_date=selected_date)
 
 
 @multilingual.route('/appointment/<int:year>/<int:month>')
@@ -210,7 +209,7 @@ def appointment_days(year, month):
         "year" : day_today.year,
     }
 
-    return render_template('appointment-days.html', languages=current_app.config['LANGUAGE_DATA'], s_date=selected_date, today=today)
+    return render_template('multilingual/appointment-days.html', languages=current_app.config['LANGUAGE_DATA'], s_date=selected_date, today=today)
 
 
 @multilingual.route('/stellenangebote', defaults={'lang_code': 'de'})
