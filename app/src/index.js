@@ -115,7 +115,10 @@ window.addEventListener('DOMContentLoaded', () => {
             $('#appointment-days').html(days_html);
         }
 
-        const hours_html = await axios.get(`/${lang()}/appointment/${e.data('year')}/${e.data('month')}/1`)
+        // Make sure to not use 1 as the selected day, since the current month should select
+        // the current day
+        let s_day = $('.selected-day').data('day');
+        const hours_html = await axios.get(`/${lang()}/appointment/${e.data('year')}/${e.data('month')}/` + String(s_day))
             .catch(() => alert("invalid request"))
             .then(response => response.data)
 

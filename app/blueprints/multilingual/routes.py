@@ -206,7 +206,7 @@ def appointment_days(year, month):
         "year" : day_today.year,
     }
 
-    selected_day = date(year, month, day_today.day if month == day_today.month else 1)
+    selected_day = date(year, month, day_today.day if month == day_today.month and year == day_today.year else 1)
     selected_date = get_selected_date(selected_day)
 
     return render_template('multilingual/appointment-days.html', languages=current_app.config['LANGUAGE_DATA'], s_date=selected_date, today=today)

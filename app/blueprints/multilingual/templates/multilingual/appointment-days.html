@@ -3,19 +3,20 @@
   <div class="row">
     <div class="col">
       <button
-        {{ 'disabled' if s_date.month_idx == today.month_idx else '' }}
+        {{ 'disabled' if (s_date.month_idx == today.month_idx and s_date.year == today.year) else '' }}
         class="carousel-control-prev-icon m-0 date-prev"
-        data-year="{{ s_date.year }}"
-        data-month="{{ s_date.month_idx - 1 }}">
+        data-year="{{ s_date.year - ((12 - (s_date.month_idx - 1)) / 12)|int}}"
+        data-month="{{ ((s_date.month_idx - 2 + 12) % 12 + 1) }}">
       </button>
     </div>
     <div class="col">
       <h4 class="my-0 fw-normal">{{ s_date.month_name }}</h4>
     </div>
     <div class="col">
-      <button class="carousel-control-next-icon m-0 date-next"
-        data-year="{{ s_date.year }}"
-        data-month="{{ s_date.month_idx + 1 }}">
+      <button
+        class="carousel-control-next-icon m-0 date-next"
+        data-year="{{ s_date.year + (s_date.month_idx / 12)|int }}"
+        data-month="{{ s_date.month_idx % 12 + 1 }}">
       </button>
     </div>
   </div>
@@ -60,19 +61,12 @@
             data-day="{{ col1o }}">
             {{ col1o }}
           </button>
-          {% elif col1o == s_date.day_idx %}
-          <button
-            type="button"
-            class="btn btn-lg w-100 btn-border-only-today dayslot selected-day {{ 's_date.day_idx' if s_date.day_idx == col1 else '' }}"
-            data-year="{{ s_date.year }}"
-            data-month="{{ s_date.month_idx }}"
-            data-day="{{ col1o }}">
-            {{ col1o }}
-          </button>
           {% elif is_today %}
           <button
             type="button"
-            class="btn btn-lg w-100 btn-border-only-today dayslot {{ 's_date.day_idx' if s_date.day_idx == col1 else '' }}"
+            class="btn btn-lg w-100 btn-border-only-today dayslot
+              {{ 'selected-day' if s_date.day_idx == col1o else '' }}
+              {{ 's_date.day_idx' if s_date.day_idx == col1 else '' }}"
             data-year="{{ s_date.year }}"
             data-month="{{ s_date.month_idx }}"
             data-day="{{ col1o }}">
@@ -81,7 +75,9 @@
           {% else %}
           <button
             type="button"
-            class="btn btn-lg w-100 btn-border-only dayslot {{ 's_date.day_idx' if s_date.day_idx == col1 else '' }}"
+            class="btn btn-lg w-100 btn-border-only dayslot
+              {{ 'selected-day' if s_date.day_idx == col1o else '' }}
+              {{ 's_date.day_idx' if s_date.day_idx == col1 else '' }}"
             data-year="{{ s_date.year }}"
             data-month="{{ s_date.month_idx }}"
             data-day="{{ col1o }}">
