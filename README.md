@@ -1,5 +1,7 @@
 # Dr. Doktor Arzt
 
+[![GitHub Super-Linter](https://github.com/rwarnking/dr-doktor-arzt/workflows/Lint%20Code%20Base/badge.svg)](https://github.com/marketplace/actions/super-linter)
+
 ## Description
 This is a webpage designed to present information about a medical facility like
 a hospital or a doctors office. Of course it should be possible to alter the page to

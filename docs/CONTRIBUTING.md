@@ -99,10 +99,40 @@ or other changes before your pull request can be ultimately accepted.
 
 ### Javascript Styleguide
 
-### Python Styleguide
+To enforce the style for the javascript code the [super linter](https://github.com/github/super-linter) is used.
+It supports and runs the following linter:
+
+* [eslint](https://eslint.org)
+* [standard.js](https://standardjs.com)
+
+### Python3 Styleguide
+
+To enforce the style for the python code the [super linter](https://github.com/github/super-linter) is used.
+It supports and runs the following linter:
+
+* [black](https://github.com/psf/black)
+* [flake8](https://flake8.pycqa.org/en/latest/)
+* [isort](https://pypi.org/project/isort/)
+* [pylint](https://www.pylint.org)
 
 ### HTML Styleguide
 
+To enforce the style for the html code the [super linter](https://github.com/github/super-linter) is used.
+It supports and runs the following linter:
+
+* [HTMLHint](https://github.com/htmlhint/HTMLHint)
+
 ### CSS Styleguide
 
+To enforce the style for the css code the [super linter](https://github.com/github/super-linter) is used.
+It supports and runs the following linter:
+
+* [stylelint](https://stylelint.io)
+
 ### Shell Styleguide
+
+To enforce the style for the shell code the [super linter](https://github.com/github/super-linter) is used.
+It supports and runs the following linter:
+
+* [shellcheck](https://github.com/koalaman/shellcheck)
+* [shfmt](https://github.com/mvdan/sh)
