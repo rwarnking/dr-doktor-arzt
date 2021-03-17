@@ -48,18 +48,10 @@ jobs:
         env:
           VALIDATE_ALL_CODEBASE: true
           VALIDATE_JAVASCRIPT_ES : true
-          VALIDATE_JAVASCRIPT_STANDARD: false
+          VALIDATE_JAVASCRIPT_STANDARD: true
           VALIDATE_HTML: true
-          VALIDATE_MD: false
-          VALIDATE_PHP: false
-          VALIDATE_PROTOBUF: false
           VALIDATE_PYTHON: true
           VALIDATE_POWERSHELL: true
-          VALIDATE_SQL: false
-          VALIDATE_XML: false
-          VALIDATE_YAML: false
-          VALIDATE_TYPESCRIPT_ES: false
-          VALIDATE_TYPESCRIPT_STANDARD: false
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PYTHON_BLACK_CONFIG_FILE: .python-black
